@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video width="200" height="150" controls>
+    <source src="hello.mp4" type="video/mp4">
+    <source src="hello.ogg" type="video/ogg">
+    </video>
+    <audio controls>
+    <source src="audio.mp3" type="audio/mp3">
+    <source src="audio.ogg" type="audio/ogg">
+    </audio><br><br><hr><br>
+    <form>
+    <label for="country">Choose your country:</label>
+    <input list="country" name="country" id="browser">
+    
+    <datalist id="country">
+      <option value="India">
+      <option value="UAE">
+      <option value="USA">
+      <option value="China">
+    </datalist>
+    </form><br><br><hr><br>
+
+    <details>
+        <summary>Aitrich</summary>
+        <p>Aitrich Academy is a prominent technology training provider with a successful track record of consistently producing high quality Information Technology Professionals who possess the technical expertise and essential behavioral skills that software companies seek.</p>
+      </details><br><br><hr>
+      <form>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="home">Home:</label>
+        <input type="url" id="home" name="home"><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age"><br><br>
+        <label for="dob">DOB:</label>
+        <input type="date" name="dob">
+      </form>
+
+      <br><br><hr><br>
+      <header>
+        <h1>AITRICH</h1>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <header>
+            <h2>AITRICH</h2>
+        </header>
+        <section>
+            <p>Aitrich Academy is a prominent technology training provider with a successful track record of consistently producing high quality Information Technology Professionals who possess the technical expertise and essential behavioral skills that software companies seek.</p>
+            
+            </section>
+    </article>
+
+    <aside>
+        <h3>Courses</h3>
+        <ul>
+            <li><a href="">Course details</a></li>
+            <li><a href="">Help Desk</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 aitrich acadamy. All rights reserved.</p>
+    </footer><br><br><hr><br>
+    <form>
+        Qualification: <input type="text" required><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" maxlength="10"><br>
+        Password: <input type="password" name="pw" pattern=".{6,}" title="Six or more characters"><br>
+        Age (between 20 and 50):
+        <input type="number"  min="20" max="50">
+        <input type="submit">
+    </form>
+    <br><br><hr><br>
+    <form>
+    <label for="rating">Rating(between 0 and 5):</label>
+    <input type="range" id="rating" name="points" min="0" max="5">
+    <input type="submit"><br><br>
+    <label for="dob">DOB:</label>
+    <input type="date" id="dob" name="birthday">
+    </form>
+</body>
+</html>
