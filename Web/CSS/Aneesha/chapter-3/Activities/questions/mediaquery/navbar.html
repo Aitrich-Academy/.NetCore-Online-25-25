@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        .navbar, .nav2{
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar a{
+            color: white;
+            text-decoration: none;
+            margin:  10px;
+            font-size: 18px;
+        }
+      .nav2{
+            
+      }
+
+      
+        
+
+        /* below 768px */
+        @media (max-width:768px) {
+            .navbar {
+                display:none;
+                margin:10px ;
+            }}
+
+     
+
+        @media (min-width:768px){
+            .navbar {
+                display:block;
+
+            }
+        }
+
+        @media (min-width:768px){
+            .nav2 {
+                display:none;
+
+            }
+        }
+            
+        
+        
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+
+    </nav>
+
+    <nav class="nav2">
+        <ul type="none">
+            <li>
+        <a href="">Home</a>
+    </li>
+
+    <li>
+            <a href="#">About</a>
+    </li>
+
+    <li>
+            <a href="#">Services</a>
+    </li>
+
+
+    <li>
+            <a href="#">Contact</a>
+    </li>
+    </ul>
+    </nav>
+    
+</body>
+</html>

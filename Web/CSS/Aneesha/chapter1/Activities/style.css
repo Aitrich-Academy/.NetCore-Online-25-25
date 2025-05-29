@@ -1,0 +1,76 @@
+html,body{
+    height:100%;
+    margin: 40px;
+}
+
+#container{
+    width:20%;
+    height:60%;
+    background-color:blue;
+    
+}
+
+ul{
+    list-style:none;
+    font-size:30px;
+
+
+}
+
+
+
+
+#graycontainer{
+    width:500px;
+    height:444px;
+    background-color:lightgray;
+    position:relative;
+    bottom:60.3%;
+    left:20%;
+    margin:2px;
+    
+}
+
+.application{
+    color:white;
+    margin-top:20px;
+    text-align:left;
+    /* border:2px solid lightblue;
+    border color:blue; */
+
+    
+}
+#side{
+    width:20%;
+    height:4rem;
+    background-color:white;
+    border:5px solid blue;
+    position:relative;
+    top:10%;
+    font-size:40px;
+    font-family:Tahoma;
+    text-align:center;
+    color:blue;
+}
+    
+
+#appli2{
+    color: red;
+    font-size:33px;
+    font-family:Tahoma;
+    margin-left:41%;
+    padding-top:1px;
+    text-align:center;
+}    
+
+
+    
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relative vs Absolute Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    .container {
+      position: relative;
+      width: 600px;
+      height: 300px;
+      border: 2px dashed #999;
+      padding: 20px;
+    }
+
+    .relative-box {
+      position: relative;
+      top: 30px;
+      left: 40px;
+      background: orange;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      background: tomato;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 180px;
+    }
+
+    .label {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Relative vs Absolute Positioning</h2>
+
+  <div class="container">
+    <div class="label">Relative Box:</div>
+    <div class="relative-box">Relative</div>
+
+    <div class="label" style="margin-top: 30px;">Absolute Box:</div>
+    <div class="absolute-box">Absolute</div>
+
+    <p>This is a paragraph to show how absolute box may overlap content.</p>
+  </div>
+
+</body>
+</html>

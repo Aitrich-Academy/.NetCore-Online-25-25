@@ -1,0 +1,21 @@
+body{
+
+    margin:20px;
+    margin-top:120px;
+}
+
+
+#container{
+    position:relative;
+    left:150px;
+    
+}
+.mainbox{
+
+    width:800px;
+    height:650px;
+    border:1px solid black;
+    position:relative;
+    bottom:35px;
+}
+

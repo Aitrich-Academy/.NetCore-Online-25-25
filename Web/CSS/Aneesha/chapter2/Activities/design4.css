@@ -1,0 +1,73 @@
+
+
+#container{
+    width:800px;
+    height:700px;
+    border:1px solid black;
+    padding:12px;
+}
+
+#contents{
+    position:absolute;
+    left:350px;
+    top:50px;
+}
+
+button{
+    width:550px;
+    height:100px;
+    background:white;
+    border:white;
+    margin-left:-205px;
+    color:blue;
+    font-size:25px;
+    font-family:times New Roman;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border-top: none;
+    
+}
+
+
+.form{
+    position:absolute;
+    top:450px;
+
+}
+.email{
+    width:600px;
+    height:30px;
+    font-size:20px;
+    font-style:bold;
+    margin-top:-29px;
+    margin-left:129px;
+    padding:15px;
+}
+.password{
+    width:600px;
+    height:30px;
+    font-size:20px;
+    font-style:bold;
+    margin-top:28px;
+    margin-left:127px;
+    padding:15px;
+}
+/* .square{
+    position:relative;
+    top:-58px;
+    left:119px;
+} */
+.square {
+  list-style-type: square;
+  font-size:30px;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.square li {
+  margin-left: 180px; 
+  margin-top:12px;
+
+  
+}
