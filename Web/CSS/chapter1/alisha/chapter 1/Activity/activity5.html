@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+aside {
+    background-color: #4267B2; /* Facebook blue */
+    color: white;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.menu-item.active {
+    background-color: #1976D2; /* Darker blue for active state */
+}
+
+main {
+    background-color: #D3D3D3; /* Light gray */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.jobs-header {
+    color: #B22222; /* Firebrick red */
+    font-size: 2em;
+    border: 1px solid white;
+    padding: 10px 20px;
+    background-color: white;
+}
+</style>
+<body>
+    <div class="container">
+        <aside>
+            <div class="menu-item active">Jobs</div>
+            <div class="menu-item">Application</div>
+            </aside>
+        <main>
+            <div class="jobs-header">JOBS</div>
+            </main>
+    </div>
+</body>
+</html>
