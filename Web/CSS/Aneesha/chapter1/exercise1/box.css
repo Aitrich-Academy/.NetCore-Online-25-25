@@ -1,0 +1,279 @@
+body{
+    margin-left:100px;
+    padding:250px
+
+}
+
+#container{
+    background-color:#64afde;
+    height:300px;
+    width:470px;
+    margin-left:400px;
+    position:absolute;
+    top:2px;
+    border-radius:17px;
+    color:white;
+    font-size:13px;
+    margin-top:200px
+
+    
+    
+    
+}
+
+.menu{
+    margin-top:53px;
+    
+    
+}
+
+.search{
+    height:39px;
+    width: 280px;
+    background-color:lightgray;
+    position:relative;
+
+}
+.explore{
+    background:#64afde;
+    color:white;
+    height:31px;
+    width:70px;
+    border:2px;
+}
+
+.land{
+    width:150px;
+    height:27px;
+    background:lightgreen;
+    border:green;
+    margin-top:12px;
+    color:white;
+}
+.Recruit{
+    width:150px;
+    height:27px;
+    background:lightgreen;
+    margin-left:10px;
+    border:green;
+    margin-top:12px;
+    color:white;
+
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f9ff;
+  }
+
+  .main-container {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 50px;
+  }
+
+  /* Job Cards Container */
+  .job-section {
+    position: relative;
+    height: 540px;
+  }
+
+  .job-box {
+    width: 150px;
+    height: 120px;
+    background-color: #eaf4ff;
+    border-radius: 12px;
+    text-align: center;
+    padding-top: 25px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+
+  .job-box h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+  }
+
+  .job-box p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Positioning each card  */
+  #box1 { top: 0; left: 0; }
+  #box2 { top: 0; left: 170px; }
+  #box3 { top: 0; left: 340px; }
+  #box4 { top: 0; left: 510px; }
+
+  #box5 { top: 140px; left: 0; }
+  #box6 { top: 140px; left: 170px; }
+  #box7 { top: 140px; left: 340px; }
+
+  #box8 {
+    top: 140px;
+    left: 510px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #fff;
+  }
+
+  #box8 h3, #box8 p {
+    color: white;
+  }
+
+  /* Help You Find a Job Section */
+  .help-section {
+    position: relative;
+    height: 400px;
+
+    bottom:200px;
+    
+    
+  }
+
+  .help-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 300px;
+    border-radius: 12px;
+    
+  }
+
+  .help-text {
+    position: absolute;
+    left: 300px;
+    top: 0;
+    width: 500px;
+  }
+
+  .help-text h2 {
+    font-size: 32px;
+    color: #1d2c42;
+    margin-bottom: 30px;
+  }
+
+  .feature {
+    margin-bottom: 25px;
+  }
+
+  .feature h4 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  .feature p {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+  }
+
+  #alertbox{
+    position:relative;
+}
+
+.alert{
+    position:absolute;
+    left:20px;
+    top:78;
+
+}
+#jobbox{
+  width:170px;
+  height:150px;
+  background: #eaf4ff;
+  margin-left:-295px
+}
+.time{
+  margin-left:100px;
+  margin-top:-23px;
+}
+hr {
+  width: 220%; /* Change this to any value like 100px, 75%, etc. */
+  border: 1px solid gray; /* Optional: customize color and thickness */
+  margin-left:-89px;
+}
+
+#jobbox2{
+  width:170px;
+  height:150px;
+  background: #eaf4ff;
+  margin-left:190px;
+  margin-top:-140px;
+}
+
+#jobbox3{
+  width:170px;
+  height:150px;
+  background: #eaf4ff;
+  margin-left:190px;
+  margin-top:-140px;
+}
+#jobbox4{
+  width:170px;
+  height:150px;
+  background: #eaf4ff;
+  margin-left:-383px;
+  margin-top:30px;
+}
+#jobbox5{
+  width:170px;
+  height:150px;
+  background: #eaf4ff;
+  margin-left:190px;
+  margin-top:-140px;
+}
+#jobbox6{
+  width:170px;
+  height:150px;
+  background: #eaf4ff;
+  margin-left:190px;
+  margin-top:-140px;
+}
+
+.view{
+  background:blue;
+  width:60%;
+  height:20%;
+  color:white;
+  border-radius:6px;
+  border-color:blue;
+  margin-left:-150px;
+  margin-top:41px;
+  font-size:18px;
+}
+
+
+.apply{
+  background:blue;
+  width:90%;
+  height:30%;
+  color:white;
+  border-radius:6px;
+  border-color:blue;
+  margin-top:7px;
+  position:relative;
+  left:-380px;
+  font-size:18px;
+
+}
+
+.image2{
+  position:absolute;
+  height:43%;
+  margin-top:-105px;
+  margin-left:8px;
+}
+.image4{
+  position:absolute;
+  margin-top:160px;
+  margin-left:7px;
+}
+.group2{
+    height:240%;
+  
+}
+

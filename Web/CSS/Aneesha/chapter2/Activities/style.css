@@ -1,0 +1,15 @@
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Custom style for list items */
+li {
+  background-color: #5a4300; 
+  color: white;
+  margin: 8px 0;
+ 
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}

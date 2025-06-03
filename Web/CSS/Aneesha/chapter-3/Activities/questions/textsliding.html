@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Text</title>
+  <style>
+    .slide-text {
+      position: relative;
+      font-size: 25px;
+      color: white;
+     background-color: #4CAF50;
+      padding: 20px;
+      width: fit-content;
+      animation: slideIn 2s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        left: -400px;
+    
+      }
+      100% {
+        left: 0;
+    
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide-text">Aneesha</div>
+
+</body>
+</html>

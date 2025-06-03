@@ -1,0 +1,21 @@
+.box{
+    width:500px;
+    height:80px;
+    border:1px solid black;
+    
+}
+
+h1,span{
+    margin-top:-1px;
+    margin-left:2px;
+}
+
+.box2{
+    width:500px;
+    height:80px;
+    border:1px solid black;
+    margin-left:535px;
+    margin-top:-84px;
+    
+    
+}
