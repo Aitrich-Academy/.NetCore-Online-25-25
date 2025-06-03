@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+  .one {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    animation: bounce 1s linear infinite;
+  }
+  
+  @keyframes bounce {
+    0% { top: 0; }
+    50% { top: 200px; }
+    100% { top: 0; }
+  }
+  .two{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(130, 130, 237);
+  animation: fade 3s infinite;
+  position: absolute;
+  top: 300px;
+  text-align: center;
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  50% {opacity: 1; }
+  100% {opacity: 0;}
+}
+.three {
+    position: absolute;
+    top: 500px;
+    left: 100px;
+    width: 50%;
+    height: 50px;
+    
+  }
+
+  .three span {
+    position: absolute;
+    animation: slideIn 3s forwards;
+    background-color: aquamarine;
+  }
+
+  @keyframes three {
+    0% {left: -100%;}
+    100% {left: 0;}
+  }
+  </style>
+<body>
+    <div class="one">HELLO</div>
+    <div class="two">Hai</div>
+    <div class="three"><span>Welcome</span></div>
+    
+</div>
+</body>
+</html>

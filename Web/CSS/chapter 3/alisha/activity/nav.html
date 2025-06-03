@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .nav1,.nav2{
+        background-color: aqua;
+        color: black;
+        padding: 10px;
+    }
+    .nav1 a{
+        margin: 10px;
+
+    }
+    @media(max-width:768px){
+        .nav1{
+            display: none;
+        }
+    }
+    @media(min-width:768px){
+        .nav1{
+            display: block;
+        }
+    }
+    @media(min-width:768px){
+        .nav2{
+            display: none;
+        }
+    }
+
+
+
+
+</style>
+<body>
+    <nav class="nav1">
+            <a>home</a>
+            <a>jobs</a>
+            <a>settings</a>
+        
+    </nav>
+     <nav class="nav2">
+        <ul>
+            <li>home</li>
+            <li>jobs</li>
+            <li>settings</li>
+        </ul>
+    </nav>
+</body>
+</html>

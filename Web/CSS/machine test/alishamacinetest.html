@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+  .welcome {
+    background: linear-gradient(to right, red,blue, green);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .welcome h1 {
+    margin: 0 0 10px;
+    font-size: 2em;
+    opacity: 1;
+    position: relative;
+    animation: bounce 1s linear infinite;
+  }
+     @keyframes bounce {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+  
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  nav a:hover {
+    color: #333;
+    background-color: #facc15;
+    transform: translateY(-3px);
+  }
+  section{
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 10px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    
+  }
+
+  .main div:hover {
+    transform: translateY(-5px);
+  }
+
+  h2 {
+    color: red;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+     transition: transform 0.2s ease-in-out;
+  }
+
+  .about:hover {
+    transform: translateY(-5px);
+  }
+
+  .gallery div {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .gallery div:hover {
+    transform: translateY(-5px);
+  }
+
+  .gallery div:active {
+    transform: translateY(0);
+  }
+
+  .activities {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .activity {
+    background: #facc15;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .activity:hover {
+    transform: translateX(-5px);
+  }
+
+  .activity:active {
+    transform: translateX(0);
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background: red;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background: blue;
+    transform: translateY(-3px);
+  }
+  
+    
+
+</style>
+</head>
+<body>
+
+<div class="welcome">
+  <h1>Welcome to Playful Wonderland!</h1>
+  <nav id="main-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="main">
+   <section id="about">
+  <div class="about" style="box-shadow: 0px 2px 4px lightgrey">
+    <h2>About Us</h2>
+    <p>Discover the magic of creativity and fun! Join us for colorful adventures filled with laughter.</p>
+  </div>
+  </section>
+  <section id="gallery">
+ <div class="gallery1">
+    <h2>Gallery</h2>
+    <div class="gallery"  style="box-shadow: 0px 2px 4px lightgrey; gap: 10px;">
+        <div style="background-color: red;" >Image 1</div>
+        <div style="background-color: blue;">Image 2</div>
+        <div style="background-color: green;">Image 3</div>
+        <div style="background-color: yellow;">Image 4</div>
+        <div style="background-color: purple;">Image 5</div>
+      </div>
+  </div>
+  </section>
+  <section id=activities>
+<div class="act"  style="box-shadow: 0px 2px 4px lightgrey">
+    <h2>Fun Activities</h2>
+    <div class="activities">
+      <div class="activity">Art Workshops</div>
+      <div class="activity">Music Sessions</div>
+      <div class="activity">Juggling</div>
+      <div class="activity">Themed Parties</div>
+    </div>
+  </div>
+  </section>
+  <section id="contact">
+
+  <div class="contact"  style="box-shadow: 0px 2px 4px lightgrey">
+    <h2 style="color: red;">Contact Us</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email">
+      <label for="message">Message:</label>
+      <textarea id="message"></textarea>
+      <button type="submit">Send message</button>
+    </form>
+</div>
+
+</section>
+</body>
+</html>
