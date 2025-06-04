@@ -1,23 +1,12 @@
 #header{
     width:100%;
     height:150px;
-    background:linear-gradient(to right,red,green);
+    background:linear-gradient(to right,red,aqua);
     color: white;
     text-align: center;
     word-spacing: 12px;
 }
-/* #header:hover{
-   color: yellow;
-} */
-.about:hover{
-    color:yellow;
-}
-.gallery:hover{
-    color:yellow;
-}
-.a:activities:hover{
-    color:yellow;
-}
+
 
 
 
@@ -45,11 +34,16 @@
 
 
 button{
-    background-color: yellow;
+    background-color: transparent;
     border:yellow;
     border-radius:50px;
     width:70px;
     height: 30px;
+}
+
+
+button:hover{
+    background-color: yellow;
 }
 
 #container{
@@ -57,25 +51,40 @@ button{
     height:130px;
     background-color:rgb(246, 248, 243);
     margin: 35px;
+     animation: moveTopBottom 1s infinite alternate;
 }
 .about{
    text-align: center;
    color: red;
     padding-top: 10px;
 }
+
+
+
+
 .para{
     font-style: italic;
     margin-left: 30px;
 }
 .img1{
+   
     width:150px;
     height:150px;
     background-color: red;
     color: white;
     text-align: center;
     border-radius: 10px;
-        margin-top: 15px;
+     margin-top: 15px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    
 }
+
+
+
+
+
+
 .img2{
     width:150px;
     height:150px;
@@ -147,7 +156,7 @@ button{
   
 
 }
-.Art{
+.box1{
     position:relative;
     top:12px;
     margin-left: 22px;
@@ -159,9 +168,9 @@ button{
     0%{
         transform:translatex(0);
     }
-    /* 100%{
+    100%{
         transform:translate(10px);
-    } */
+    }
 }
 .box2{
     width:70%px;
@@ -169,6 +178,7 @@ button{
     background: yellow;
     margin-left: 15px;
     margin-top: 17px;
+    animation: Move 3s infinite alternate;
   
 
 }
@@ -178,6 +188,7 @@ button{
     background: yellow;
     margin-left: 15px;
      margin-top: 17px;
+    animation: Move 3s infinite alternate; 
 
 }
 #funactivities{
@@ -192,6 +203,7 @@ button{
     width: 60%;
     height:30px;
     margin-left: 12px;
+    border-color: aqua;
 }
 
 .email{
@@ -199,6 +211,7 @@ button{
     height: 30px;
     margin-left: 12px;
     margin-top: 32px;
+    border-color: aqua;
 }
 .message{
     
@@ -206,6 +219,7 @@ button{
     width: 60%;
     height:100px;
     margin-left: 12px;
+    border-color: aqua;
 
 }
 .send{
@@ -216,10 +230,27 @@ button{
     margin-left: 15px;
     margin-top: 15px;
 }
+
+.send:hover{
+    background-color: aqua;
+
+}
+
+
 footer{
     width:100%;
-    height:50px;
+    height:30px;
     background-color: darkblue;
     position: relative;
     top:250px;
+    text-align: center;
+    margin-top: 27px;
+    
+}
+p{
+    position: relative;
+    top: 12px;
+}
+.Art{
+    margin-left: 72px;
 }
