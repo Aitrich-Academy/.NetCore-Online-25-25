@@ -51,8 +51,16 @@ button:hover{
     height:130px;
     background-color:rgb(246, 248, 243);
     margin: 35px;
-     animation: moveTopBottom 1s infinite alternate;
+     /* animation: moveTopBottom 7s infinite alternate; */
+     transition: transform 0.3s ease;
 }
+
+#container:hover {
+      transform: translateX(20px);
+    }
+
+
+
 .about{
    text-align: center;
    color: red;
