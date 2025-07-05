@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Clock</title>
+  <style>
+    #clock {
+      font-size: 2em;
+      font-family: Arial, sans-serif;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="clock">Loading time...</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString(); // Get current time in readable format
+      document.getElementById('clock').innerText = timeString;
+
+   
+    }
+
+    updateClock(); // Initial call to show time immediately
+    setInterval(updateClock, 1000); // Update every second
+   
+  </script>
+
+</body>
+</html>

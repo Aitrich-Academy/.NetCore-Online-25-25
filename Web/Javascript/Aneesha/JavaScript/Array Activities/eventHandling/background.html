@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p  id="myDiv"> JavaScript allows developers to:
+         Add dynamic content (like image sliders, live clocks, form validations).
+        Respond to user actions (like button clicks, mouse movements).
+        Update or modify HTML and CSS on the page without reloading.
+        Communicate with servers (e.g., fetch data from a database using APIs).</p>
+    <button onclick="changeColor()">Change bgcolor</button>
+
+    <script>
+        // let result = document.getElementById("myDiv")
+        // function changeColor(){
+        //     document.body.style.backgroundColor = "brown";
+        
+        //     result.innerHTML
+
+        // }
+
+        //change random color
+        let result = document.getElementById("MyDiv");
+        function changeColor(){
+            //generate random color
+           let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+           //set it as the background color
+           document.body.style.backgroundColor = randomColor;
+           //show the color code in the div
+           result.innerHTML ="Background changed to:" + randomColor;
+
+        }
+
+
+    </script>
+</body>
+</html>
