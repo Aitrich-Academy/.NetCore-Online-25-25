@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        .error {
+            color : red;
+            margin-top:5px;
+        }
+
+        .success {
+            color:green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+   <h2>Registration Form</h2> 
+   <form id="myForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name"> <br>
+        <div id="nameError" class="error"></div><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email"> <br>
+        <div id="emailError" class="error"></div><br>
+
+        <button type="submit">Submit</button>
+   </form>
+
+   <div id="result" class="success"></div>
+
+   <script>
+
+    document.getElementById("myForm").onsubmit = function(e){
+
+        e.preventDefault(); //prevent page refresh
+
+
+
+        //get values
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+
+        //Error msg elements
+        var nameError = document.getElementById("nameError");
+        var emailError = document.getElementById("emailError");
+        var result = document.getElementById("result");
+
+
+        //Reset messages
+        nameError.innerText ="";
+        emailError.innerText ="";
+        result.innerText = "";
+
+
+        //validation
+        let valid = true;
+
+        if(name == ""){
+            nameError.innerText ="Name is required";
+            valid = false;
+        }
+
+        if(email == ""){
+            emailError.innerText ="Email is required.";
+            valid = false;
+
+        }
+        if(valid){
+            result.innerText = "Form submitted successfully!";
+            //you can also reset the form:
+              // document.getElementById("myForm").reset();
+
+
+        }
+
+    }
+   
+   </script>
+
+
+
+
+
+
+
+   </form>
+</body>
+</html>

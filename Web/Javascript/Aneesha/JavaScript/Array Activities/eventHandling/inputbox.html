@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Text Display</title>
+</head>
+<body>
+  <h2>Type something:</h2>
+  <input type="text" id="myInput" placeholder=" typing...">
+  <p>Current Text: <span id="displayText"></span></p>
+
+  <script>
+    const inputBox = document.getElementById("myInput");
+    const display = document.getElementById("displayText");
+
+    inputBox.addEventListener("input", function() {
+      display.innerHTML = inputBox.value;
+    });
+  </script>
+</body>
+</html>

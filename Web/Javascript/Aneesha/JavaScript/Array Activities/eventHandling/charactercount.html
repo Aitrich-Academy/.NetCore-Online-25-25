@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Character Counter</title>
+</head>
+<body>
+
+  <h3>Type text:</h3>
+  <textarea id="Textarea" rows="5" cols="30"></textarea>
+  <p>Character count: <span id="charCount"></span></p>
+
+  <script>
+    const textarea = document.getElementById("Textarea");
+    const countDisplay = document.getElementById("charCount");
+
+    textarea.addEventListener("input", function () {
+      countDisplay.innerHTML = textarea.value.length;
+    });
+  </script>
+
+</body>
+</html>

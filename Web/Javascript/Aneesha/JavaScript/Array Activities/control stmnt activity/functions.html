@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// find area
+function getCircleArea(radius){
+    const pi= 3.14;
+    const area= pi *radius * radius;
+    return area;
+}
+
+let result = getCircleArea(4);
+console.log("Area of the circle:",result);
+
+
+
+        //even numbers
+        function isEven(num){
+            return num % 2 === 0;
+}
+console.log(isEven(4));
+console.log(isEven(3));
+
+
+
+
+// max three numb
+function findMax(a,b,c){
+    if (a>=b && a>=c){
+        return a;
+    }else if (b>= a && b >=c){
+        return b;
+    }else {
+        return c;
+    }
+    }
+   console.log(findMax(15,13,25)) ;
+   console.log (findMax(45,10,32));
+   console.log(findMax(4,44,14));
+
+   
+
+//celsius to farenheat
+    function toFahrenheit(celsius){
+        return (celsius * 9/5) + 32;
+
+    }
+    console.log(toFahrenheit(100));
+    console.log(toFahrenheit(50));
+
+
+    //return fullname
+    let firstName = "Aneesha";
+    let lastName = "Faizal";
+  
+   function getFullName(firstName, lastName){
+
+     return firstName+lastName;
+   }
+
+//    console.log(getFullName(firstName,lastName));
+     fullname = getFullName(firstName, lastName);
+        console.log(fullname);
+
+//Function without Return
+//print name
+
+function welcomeUser(name){
+    console.log("Welcome, " + name + "!");
+}
+welcomeUser("Aneesha")
+
+
+//multi Table 1 to 10
+
+
+// function printTable(){
+//     for(let i =1; i<=10 ; i++){
+//         for(let num=1 ;num<=10 ; num++){
+//                 console.log(num+ "*"  +i+"=" + num*i);
+//     }
+   
+//     }
+   
+// }
+
+//  printTable();
+
+
+function printTable() {
+    for(let i = 1; i <= 10; i++) {
+        for(let j = 1; j <= 10; j++) {
+            console.log(j + " * " + i + " = " + j * i);
+        }
+        console.log("***********");
+    }
+    
+}
+
+printTable();  // prints 1 to 10 full tables
+
+
+//Show countdown
+function countDown(start){
+    for(let i= start; i >=1; i--){
+        console.log(i)
+    }
+}
+  countDown(9);
+
+
+
+  //display Array elements
+  function showFruits(fruitsArray){
+    for(let i=0; i< fruitsArray.length; i++){
+  document.write(fruitsArray[i] + "<br>"+"<br>");
+    //  console.log(fruitsArray[i]);
+  }}
+
+  let fruits = ["Apple","Banana","Mango","Grapes"];
+    showFruits(fruits);
+
+
+
+//Alert Low Battery
+ function checkBattery(level){
+    if  (level<20){
+        alert("Battery Low!");
+    
+    }else {
+        alert("Battery Ok!");
+    }
+ }
+//    checkBattery(5);
+
+
+//Anonymous functions
+    //sum of two numbers
+const sum = function(a, b){
+
+    return a + b;
+};
+document.write(sum(5,4)) ;
+
+
+//if string is palindrome
+const string = function(palindrome){
+    return palindrome;
+}
+   
+
+
+
+
+//square of a number
+    const square = function(number){
+        return number * number;
+    };
+
+    console.log(square(6));
+
+
+    //filter odd number
+    const numbers = [1,2,3,4,5,6,7,8,9,10,0];
+    const oddNumbers = numbers.filter(function(num){
+        return num %2  !== 0;
+
+    });
+console.log(oddNumbers);
+
+
+
+
+
+//settime out
+setTimeout(function() {
+  console.log("Task done!");
+}, 2000);
+
+
+
+
+   </script>
+</body>
+</html>

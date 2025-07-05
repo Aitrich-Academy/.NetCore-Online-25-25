@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="msg">
+    <button id="btn" onclick="addToList()">Click Me</button>
+    <ul id="myList"></ul>
+<script>
+    function addToList(){
+        const input = document.getElementById("msg");
+        const newItem = document.createElement("li");
+        newItem.textContent = input.value;
+        document.getElementById("myList").appendChild(newItem);
+        input.value = "" ;
+    }
+</script>
+
+
+
+
+
+
+</body>
+</html>

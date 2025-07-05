@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p class="msg">welcome to js</p>
+        <p class="msg">Hello</p>
+        <p class="msg">js Attributes</p>
+    </div>
+
+    <script>
+        const updatedText = "learning Javascript"
+      
+        console.log(document.getElementsByClassName("msg"));
+        changeText = document.getElementsByClassName("msg");
+        changeText[0].innerHTML =updatedText;
+        changeText[1].innerHTML = updatedText;
+        changeText[2].innerHTML = updatedText;
+        console.log(changeText);
+    </script>
+</body>
+</html>

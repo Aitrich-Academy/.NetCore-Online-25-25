@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+            font-size: 22px;
+            color:cyan;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Hello,World!</h1>
+    <button onclick="changeHeader()">Click Me</button>
+    <script>
+        function changeHeader(){
+            const header = document.getElementById('header');
+              header.textContent = "welcome to js"
+        header.style.color = 'green';
+        header.style.fontSize = '44px';
+
+        }
+
+      
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

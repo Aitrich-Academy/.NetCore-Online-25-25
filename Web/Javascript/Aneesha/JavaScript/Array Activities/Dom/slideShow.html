@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img  id="slide"/> <br>
+  
+    <button id="prev" onclick="slideShow(this.id)">Previous</button>
+    <button id="next" onclick="slideShow(this.id)">Next</button>
+
+    <script>
+        const images = ["/Dom/butt1.jpeg", "/eventHandling/butt2.jpeg","/eventHandling/butt3.jpeg"];
+        console.log(images);
+        let index = -1;
+
+      const  pic = document.getElementById("slide");
+        function slideShow(id){
+            if (id=== "prev"){
+                index--
+            
+            if(index == -1){
+            index = images.length -1;
+        }    
+            }else{ index++
+             if (index == images.length){
+            index = 0;
+        }
+
+            }
+        
+       
+            console.log(index)
+        pic.src = images[index];
+
+                console.log(pic.src);
+            }
+        
+        
+
+
+        
+
+        
+    </script>
+
+</body>
+</html>

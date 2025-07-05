@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         //forEach
+        let students = ["Reema", "Arjun","Kiran","Fatima",];
+          students .forEach(function(school){
+            console.log("Hello,  "+ school+"!");
+
+          });
+
+
+          //map()
+          let fruits =["apple","banana","mango"];
+          const newFruits = fruits.map(function(fruit) {
+            console.log(fruit.toUpperCase ())
+          })
+
+
+          //Filter and even numbers
+          let numbers = [3,6,9,12,15,18];
+        let filteredArray = numbers.filter(function(evennumbers){
+               return evennumbers % 2 === 0;
+           
+          }
+        );
+         console.log(filteredArray);
+
+          //reduce() 
+          let marks = [85,90,78,92];
+          let sum = marks.reduce(function(acc,curr){
+            return acc+curr;
+        },0);
+                console.log(sum);
+
+
+
+             // find()
+             let scores = [
+               {name:"Reena" ,mark:85},
+               {name:"Ravi", mark:95},
+               {name:"Amit", mark:89}
+             ];
+
+        let highscore = scores.find (function(score){
+            return score.mark >=95;
+
+        }
+    
+    )
+    console.log(highscore);
+    
+
+
+  //for...of 
+  let pets = ["Dog", "Cat", "Parrot"];
+        for (let pet of pets){
+          console.log(pet);
+        }
+
+    //for ..in
+    let person = {
+      name:"Ayesha",
+      age:25,
+      city:"Delhi"
+    };
+    for(let key  in person){
+      console.log(key);
+    }
+  // each key and its value(for..in)
+    let student = {
+      name:"Ayesha",
+      age:2,
+      city:"Delhi"
+    };
+
+for (let keyvalue in student){
+  console.log(keyvalue +":" ,student[keyvalue]);
+}
+
+//filter()
+let ages = [12,18,21,30,14];
+  let adultAges = ages.filter(function(age){
+    return age >= 18;
+  }
+);
+console.log(adultAges);
+
+
+
+//map()
+let age = [12,18,21,30,14];
+  let ageStrings = age.map(function(age){
+    return age === 21;
+  }
+)
+console.log(ageStrings);
+    
+//  capitalize first letter
+let cities = ["mumbai", "delhi","chennai"];
+
+  let capitalize = cities.map(city =>
+      city.charAt(0).toUpperCase()+ city.slice(1)
+
+  );
+
+  console.log(capitalize);
+
+
+
+
+        
+    </script>
+
+
+
+
+</body>
+</html>
