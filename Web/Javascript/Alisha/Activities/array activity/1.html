@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // favorite color
+        var favcolor=["blue","red","green","purple","yellow"];
+        console.log(favcolor)
+        console.log(favcolor[2])
+
+        // grocery list
+         var grocerylist=["milk","bread","egg"];
+        grocerylist[3]="butter";
+        console.log(grocerylist)
+        grocerylist.shift(0)
+        console.log(grocerylist)
+
+
+        // counting fruits
+         var fruits=["apple","banana","orange"]
+        console.log(fruits)
+        let size=fruits.length
+      
+
+        // daily tempratures
+        let temperature= [70, 68, 75, 73, 69, 72, 74];
+        let sum=0;
+        console.log(temperature)
+        for (i = 0; i < temperature.length; i++){ sum += temperature[i]; }
+        let average= sum / temperature.length
+        console.log(sum)
+        console.log("average temprature is" +average)
+        const highest = Math.max(...temperature);
+        console.log("highest temprature is " +highest);
+
+        // reversing a list
+         let numbers= [1,2,3,4,5];
+         numbers.reverse();
+         console.log(numbers)
+
+
+    </script>
+</body>
+</html>
