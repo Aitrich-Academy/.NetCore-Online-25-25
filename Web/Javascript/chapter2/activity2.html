@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Job Titles</h3>
+    <input type="text" id="searchInput" placeholder="Search job titles...">
+
+    <ul id="jobList">
+        <li>Software Engineer</li>
+        <li>Data Analyst</li>
+        <li>Web Developer</li>
+        <li>Project Manager</li>
+    </ul>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+const jobList = document.getElementById('jobList');
+const items = jobList.getElementsByTagName('li');
+
+searchInput.addEventListener('input', function() {
+    const filter = searchInput.value.toLowerCase();
+    for (let i = 0; i < items.length; i++) {
+        const text = items[i].textContent.toLowerCase();
+        if (text.includes(filter)) {
+            items[i].style.display = '';
+        } else {
+            items[i].style.display = 'none';
+        }
+    }
+});
+
+</script>
+</body>
+</html>

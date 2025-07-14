@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="number"></h1>
+    <script>
+        // if else
+       let number=3;
+       if(number%2==0){
+        console.log("even")
+       }else{console.log("odd")}
+
+       let numb=0;
+       if(numb<0){
+        console.log("negative")
+       } else if(numb>0){
+        console.log("positive")
+       }else{console.log("zero")}
+
+        // switch loop
+        let light = "green";
+        let message;
+        switch(light){
+            case "red": message  = "stop";
+            break;
+            case "green": message  = "go";
+            break;
+            case "yellow": message  = "slow";
+            break;
+            default: message =   "unknown";
+        }
+        console.log(message);
+
+        let digit =7;
+        let word;
+
+switch (digit) {
+  case 0: word="zero";
+    break;
+  case 1: word="one";
+    break;
+  case 2: word="two";
+    break;
+  case 3: word="three";
+    break;
+  case 4: word="four";
+    break;
+  case 5: word="five";
+    break;
+  case 6: word="six";
+    break;
+  case 7: word="seven";
+    break;
+  case 8:  word="eight";
+    break;
+  case 9:  word="nine";
+    break;
+  default:  word="invalid";
+}
+console.log(word)
+
+
+        // while loop
+
+        let count = 1
+        while(count<= 10){
+            // document.getElementById("number").innerHTML=count;
+            // console.log("number : ", count)
+            document.write(count)
+            count++;
+        }
+
+
+
+        let num = [1,2,3,4,];
+        let i = 0;
+        while(i<num.length) {
+            console.log(num[i]+2);
+            i++;
+        }       
+        
+    </script>
+</body>
+</html>

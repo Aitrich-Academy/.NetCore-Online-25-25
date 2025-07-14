@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.for each
+        let students = ["Reema", "Arjun", "Kiran", "Fatima"];
+        students.forEach(function(student) {
+            console.log("Hello, " + student);
+        });
+
+        // 2.map
+        let fruits = ["apple", "banana", "mango"];
+        let upperFruits = fruits.map(function(fruit) { 
+        return fruit.toUpperCase();
+        });
+        console.log(upperFruits);
+
+        // 6.for of
+        let pets = ["Dog", "Cat", "Parrot"];
+        for (let pet of pets) {
+            console.log(pet);
+        }
+
+        // 10.for of
+        let users = [
+            { username: "admin", active: true },
+            { username: "guest", active: false },
+        ];
+        for (let user of users) {
+            if (user.active) {
+                console.log(user.username);
+            }}
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
