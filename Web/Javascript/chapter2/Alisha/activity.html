@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table id="studentList" border="2px"></table>
+    <script>
+        const names=[{name:"Alisha",age:25},{name:"aneesha",age:26}]
+        const table=document.getElementById("studentList");
+        for(let i=0; i< names.length;i++){
+        
+        var tr=document.createElement("tr")
+        var td=document.createElement("td")
+         td.innerHTML=`<p>${names[i].name}</p><p>${names[i].age}</p>`
+        tr.appendChild(td)
+        table.appendChild(tr);
+        }
+
+
+        //  li=document.createElement("li")
+        // li.textContent=names[1]
+        // list.appendChild(li)
+
+        // li=document.createElement("li")
+        // li.textContent=names[2]
+        // list.appendChild(li)
+
+        // li=document.createElement("li")
+        // li.textContent=names[3]
+        // list.appendChild(li)
+        
+        //  li=document.createElement("li")
+        // li.textContent=names[4]
+        // list.appendChild(li)
+
+        console.log(list);
+
+                                                                          
+
+        
+
+    </script>
+</body>
+</html>

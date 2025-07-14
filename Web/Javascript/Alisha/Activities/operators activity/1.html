@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="total"></h2>
+    <h2 id="score"></h2>
+    <h2 id="name"></h2>
+    <h2 id="ticket"></h2>
+    <h2 id="subject"></h2>
+    <h2 id="mark"></h2>
+    <h2 id="pass"></h2>
+    <h2 id="result"></h2>
+    <h2 id="likes"></h2>
+    <h2 id="Age"></h2>
+    <h2 id="login"></h2>
+    <h2 id="even"></h2>
+    <script>
+        // Arithmetic Operators
+        let item1=120;
+        let item2=200;
+        let item3=80;
+        let totalCost= item1+item2+item3;
+        let gst= totalCost*0.18;
+        let finalAmount = totalCost + gst;
+        document.getElementById("total").innerHTML = "total cost is "+totalCost;
+        document.getElementById("total").innerHTML = "Final amount is "+finalAmount;
+
+        // Assignment Operators
+        let score= 50;
+        score += 20;
+        score += 30;
+        document.getElementById("score").innerHTML="final score = "+score;
+
+        // Comparison Operators
+        let Age = 17;
+        if (Age >= 18) {document.getElementById("Age").innerHTML = "Eligible for Driving License";}
+        else {document.getElementById("Age").innerHTML = "Not Eligible";}
+
+        // Logical Operators
+        const correctUsername = "hello123";
+        const correctPassword = "hello321";
+        let username = "hello123";
+        let password = "hello321";
+        let login=(username===correctUsername&& password===correctPassword)?"login successfull":"invalid";
+        // (username === correctUsername && password === correctPassword) {
+        document.getElementById("login").innerHTML = login; 
+        // else {document.getElementById("login").innerHTML = "Invalid username or password.";}
+        
+
+        // Ternary Operator
+        let age=20;
+        let ticketPrice= (age<12)?50:100;
+        document.getElementById("ticket").innerHTML="ticket price=  "+ticketPrice;
+
+
+        // String Concatenation using + Operator
+
+        let firstName= "Alisha ";
+        let lastName= "Varghese";
+        let fullName= firstName+lastName;
+         document.getElementById("name").innerHTML="Hello "+fullName;
+
+
+        // Unary Operators
+        let like = 100;
+        like++;
+        like++;
+        like++;
+        document.getElementById("likes").innerHTML= "Updated likes: " + like;
+
+        // Modulus Operator (%)
+        let num = 30;
+        if (num % 2 === 0) {
+        document.getElementById("even").innerHTML = "Even";}
+         else {document.getElementById("even").innerHTML= "Odd";}
+
+        // Typeof Operator
+        let subject = "maths";
+        let mark = 50;
+        let pass = true;
+        document.getElementById("subject").innerHTML = "Type of subject is " + typeof subject;
+        document.getElementById("mark").innerHTML = "Type of mark is " + typeof mark;
+        document.getElementById("pass").innerHTML = "Type of pass or fail is " + typeof pass;
+
+
+        // Relational Operators
+        let result = 30;
+        if (result >= 40) {document.getElementById("result").innerHTML = "Passed";} 
+        else {document.getElementById("result").innerHTML = "Failed";}
+
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 to 10
+        for(i=1;i<=10;i++){
+            console.log(i)
+        }
+
+        // even 1 to 20
+        for(let b=1;b<=20;b++){
+       if(b%2!=0){
+       continue;
+       }
+       console.log(b)
+        }
+
+        //  sumof 1to 100
+        let sum = 0;
+        for (let i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log("Sum is ", sum);
+
+
+        // mult table of 5
+        let num = 5;
+        for (let i = 1; i <= 10; i++) {
+            console.log(`${num} × ${i} = ${num * i}`);
+        }
+
+
+        // each element in a array
+        let number = ["one", "two", "three"];
+        for (let i = 0; i < number.length; i++) {
+        console.log(number[i]);
+        }
+
+        // 10 to 1 reverse
+        for(let i=10;i>=1;i--){
+         console.log(i)
+        }
+
+        //odd numbers 1 to 50
+        let count = 0;
+        for (let i = 1; i <= 50; i++) {
+            if (i % 2 !== 0) {
+                count++;
+            }
+        }
+        console.log(" odd numbers between 1 and 50 is ", count);
+
+        
+        // squre of 1 to 5
+        for(let i=1;i<=5;i++){
+            
+            console.log("squre root ",i**2)
+        }
+
+        // each character
+        let word = "alisha";
+        for (let i = 0; i < word.length; i++) {
+            console.log(word[i]);
+        }
+
+
+        // 1 to 50 divisible by 3
+        for(let i=1;i<=50;i++){
+            if(i%3==0)
+            
+            console.log(i)
+        }
+
+        // factourial of number
+        let fact=1;
+        
+        for(i=1;i<=5;i++){
+            fact*=i;
+            console.log(fact)
+        }
+            
+        
+
+        // first 10 multiples
+        let numb=2;
+        for(let i=1;i<=10;i++){
+            console.log(numb*i)
+        }
+
+        // reverse the array
+        let array ="hello";
+        for(i=array.length;i>=0;i--){
+            console.log(array[i])
+        }
+
+        // average of numbers
+        let numbers = [1,2,3,4,5];
+        let sumof=0;
+        let average=0;
+        for(i=0;i<numbers.length;i++){
+            sumof+=numbers[i];
+            console.log(sumof);
+        }
+         average=sumof/numbers.length; 
+        console.log(average)
+        
+    </script>
+</body>
+</html>
