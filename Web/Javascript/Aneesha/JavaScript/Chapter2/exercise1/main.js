@@ -5,7 +5,7 @@ const List =[{image:"pictures/images/Group 1126.png",jobRole:"Social Media Assis
 
 ];
 
-const table = document.getElementById('studentList');
+const table = document.getElementById('jobList');
 for(let a=0; a< List.length;a++){
 var tr = document.createElement('tr');
 var td = document.createElement('td');
@@ -13,7 +13,8 @@ var td = document.createElement('td');
 // const imgHtml = List[a].image
 //  ?`<img src="${List[a].image}" width = "60">`:'';
 
-td.innerHTML = `<div class ="job-img"> <img src="${List[a].image}"> </p> <div class="job-info"> <p><b>${List[a].jobRole}</b></p> <p>Location:${(List[a].Location)}</p> <p>date:${(List[a].date)}</p> <p>Time:${(List[a].Time)}`
+td.innerHTML = `<div class ="job-img"> <p><img src="${List[a].image}"> </p> <div class="job-info"> 
+<p><b>${List[a].jobRole}</b></p> <p>Location:${(List[a].Location)}</p> <p>date:${(List[a].date)}</p> <p>Time:${(List[a].Time)}`
 tr.appendChild(td);
 table.appendChild(tr);
 

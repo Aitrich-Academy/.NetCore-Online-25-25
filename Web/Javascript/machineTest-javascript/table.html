@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add and Delete Rows</title>
+</head>
+<body>
+  <input type="text" id="name" placeholder="Enter a name" />
+  <input type="email" id="email" placeholder="Enter an email" />
+  <button onclick="addTask()">Add</button>
+
+  <table id="tableData" border="1px">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>task</th> 
+    </tr>
+  </table>
+
+  <script>
+    function addTask() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      
+
+      const table = document.getElementById("tableData");
+      const newRow = table.insertRow();
+
+      const cell1 = newRow.insertCell(0);
+      const cell2 = newRow.insertCell(1);
+      const cell3 = newRow.insertCell(2);
+
+      cell1.innerHTML = name;
+      cell2.innerHTML = email;
+
+     
+      const deleteButton = document.createElement("button");
+      deleteButton.innerHTML = "Delete";
+      deleteButton.onclick = function () {
+        table.deleteRow(newRow.rowIndex);
+      };
+      cell3.appendChild(deleteButton);
+      
+      document.getElementById("name").value="";
+      document.getElementById("email").value="";
+   
+   
+    }
+  </script>
+</body>
+</html>

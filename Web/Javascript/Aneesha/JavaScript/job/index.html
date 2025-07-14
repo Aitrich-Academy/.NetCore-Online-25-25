@@ -15,7 +15,7 @@
     const input = document.getElementById('search');
     const container = document.getElementById('jobListcontainer');
 
-    // ✅ Function with parameter
+   
     function searchJobs(filteredJobs) {
       container.innerHTML = ""; // clear old items
 
@@ -26,11 +26,11 @@
       });
     }
 
-    // ✅ Filter and display jobs on keyup
+    //  Filter and display jobs on keyup
     input.addEventListener("keyup", function() {
       let searchText = input.value.toLowerCase();
 
-      // ✅ Don't reuse "List" inside the filter function
+      
       let filtered = List.filter(function(job) {
         return job.toLowerCase().includes(searchText);
       });
@@ -38,8 +38,8 @@
       searchJobs(filtered);
     });
 
-    // ✅ Show all jobs on page load
-    searchJobs(List);
+    //  Show all jobs on page load
+    // searchJobs(List);
   </script>
 </body>
 </html>
