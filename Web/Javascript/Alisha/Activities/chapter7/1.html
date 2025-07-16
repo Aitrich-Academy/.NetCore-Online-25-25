@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // area
+        function getCircleArea(radius) {
+            const pi = 3.14;
+            const area = pi * radius * radius;
+             return area;
+            }
+            let result = getCircleArea(5);
+            console.log("Area of the circle:", result);
+        // even
+        function isEven(num) {
+            return num % 2 === 0;
+        }
+        console.log(isEven(4));
+        
+        // celsius
+        function toFahrenheit(celsius) {
+            return (celsius * 9 / 5) + 32;
+        }
+        console.log(toFahrenheit(10));
+
+        // full name
+        function getFullName(firstName, lastName) {
+            return firstName + " " + lastName;
+        }
+        console.log(getFullName("Alisha", "Varghese"));
+
+       
+
+        // without return
+
+        // welcome
+
+        function welcomeUser(name) {
+            console.log("Welcome, " + name + "!");
+        }
+        welcomeUser("Alisha"); 
+
+        // countdown
+        function countDown(start) {
+            for (let i = start; i >= 1; i--) {
+                console.log(i);}
+            }
+            countDown(7);
+
+        // fruits array
+        let fruits=["apple","orange","pappaya"]
+        function showFruits(fruitsArray) {
+            for (let fruit of fruitsArray) {
+                console.log(fruit);}
+            }
+            showFruits(fruits);
+
+            // battery
+            function checkBattery(level) {
+                if (level < 20) {
+                    console.log("Battery Low!");
+                } else {
+                    console.log("Battery OK");
+                }
+            }
+            checkBattery(10);
+
+            // Anonymous Functions
+
+            // sum
+            const sum = function(a, b) {
+                return a + b;
+            };
+            console.log(sum(1,2));
+
+            // square
+            const number= function(a){
+                return a**a;
+            }
+            console.log(number(2));
+
+            
+
+
+
+
+
+
+
+
+
+   
+
+
+
+    </script>
+</body>
+</html>

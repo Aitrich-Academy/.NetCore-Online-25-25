@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Search</title>
+</head>
+<body>
+  <label>Joblist</label>
+  <input type="text" id="search" placeholder="search" />
+  <ul id="jobListcontainer"></ul>
+
+  <script>
+    const List = ["SoftwareEngineer", "Frontenddevloper", "backenddeveloper", "Graphicdesigner", "VideoEditor"];
+    const input = document.getElementById('search');
+    const container = document.getElementById('jobListcontainer');
+
+   
+    function searchJobs(filteredJobs) {
+      container.innerHTML = ""; // clear old items
+
+      filteredJobs.forEach(function(job) {
+        let li = document.createElement("li");
+        li.innerHTML = job;
+        container.appendChild(li);
+      });
+    }
+
+    //  Filter and display jobs on keyup
+    input.addEventListener("keyup", function() {
+      let searchText = input.value.toLowerCase();
+
+      
+      let filtered = List.filter(function(job) {
+        return job.toLowerCase().includes(searchText);
+      });
+
+      searchJobs(filtered);
+    });
+
+    //  Show all jobs on page load
+    // searchJobs(List);
+  </script>
+</body>
+</html>

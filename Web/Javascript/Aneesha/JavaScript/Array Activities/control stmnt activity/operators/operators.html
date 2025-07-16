@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let item1 = 120;
+        let item2 = 200;
+        let item3 = 80;
+
+
+        let totalCost = item1+item2+item3;
+
+        let gst = totalCost* 0.18;
+
+        let finalCost = totalCost + gst;
+
+        console.log("Total cost before Gst:" ,totalCost);
+        console.log("Gst @18%: gst.to",finalCost)
+
+        
+
+
+
+
+
+
+
+//+= operator using
+   let score = 50;
+   score += 20;
+   score += 30;
+
+   console.log("final score:" ,score);
+
+
+
+
+
+   //checking eligibility
+   let age = 22;
+   if (age >=18) {
+     console.log("Eligible for Driving License")
+   } else{
+      console.log("not Eligible");
+   }
+
+
+   //logical operator(login system)
+
+let correctUsername = "admin";
+let correctPassword = "1234";
+
+
+    let enteredUsername = "admin";
+    let enteredPassword = "1234"
+
+
+
+
+   if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+    console.log("Login successful!");
+} else {
+    console.log("Invalid username or password.");
+}
+    
+
+
+//ternary operator
+    let Age = 2;
+    let ticketPrice = (Age <12) ? 50:100;
+    console.log(ticketPrice);
+    
+  
+//concatenation
+    let firstName = "Aneesha";
+    let lastName  = "Faizal";
+
+    let fullName = firstName + " " + lastName;
+
+    console.log("Hello, " + fullName + "!");
+
+    //Unary operator(counter on social media)
+
+    // Starting likes
+    let likes = 100;
+
+        // Simulate 3 clicks on “Like”
+        likes++;
+        likes++;
+        likes++;
+
+// Print the updated count
+console.log("Updated likes: " + likes);
+
+
+//Modules operator(even or add) %
+    let number = 4;
+    if (number%2 == 0) {
+        console.log("Even");
+     } else {
+        console.log("Odd");
+     }
+  
+     // type of variable
+     let string = "hello";
+     let numb = 444;
+     let boolean = true;
+
+     console.log(typeof string);
+     console.log(typeof numb);
+     console.log(typeof boolean);
+
+ //Relational operators (online exam result)
+    let mark = 78;
+    if (score >= 40){
+        console.log("passed");
+    } else {
+        console.log("failed");
+
+    }
+
+
+    
+
+    
+    
+
+
+
+
+    </script>
+    
+</body>
+</html>

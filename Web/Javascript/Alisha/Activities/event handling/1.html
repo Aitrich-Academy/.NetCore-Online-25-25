@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="increase">0<h1>
+  <button onclick="number()">AGE</button><br>
+  <button onclick="changeColor()">Change Background</button><br>
+
+  <button onclick="showHide()">toggle</button>
+  <p id="myDiv">my name is alisha</p>
+
+  <div id="hover">hover here</div>
+  <p id="para"></p>
+
+  <img id="image" src="Screenshot 2025-05-27 134513.png"><br>
+
+  <input type="text" id="input" placeholder="Type something">
+<p id="output"></p><br>
+
+<textarea id="textarea" rows="5" cols="15" placeholder="Type"></textarea>
+<p id="charCount"></p>
+
+
+    <script>
+        // click counter button
+       let count = 0;
+       function number() {
+        count++;
+        document.getElementById("increase"). innerHTML = count;
+    }
+
+    // toggle text display
+    function showHide(){
+        var abc=document.getElementById("myDiv");
+        if(abc.style.display==="block"){
+            abc.style.display="none";
+        }else{
+            abc.style.display="block";
+        }
+    }
+
+    // Change Background Color
+    function changeColor (){
+   document.body.style.backgroundColor = "blue";
+    }
+    
+    // Mouse Over Even 
+    let box = document.getElementById("hover");
+    let msg = document.getElementById("para");
+    box.onmouseover = () => msg.innerText = "Mouse is over me!";
+    box.onmouseout = () => msg.innerText = "Mouse left!";
+
+    
+
+    // Input Field on Change
+    let input = document.getElementById("input");
+    let output = document.getElementById("output");
+    input.oninput = () => {
+        output.innerText = input.value;
+    };
+
+    // Form Submission
+    
+
+
+    // Image Size Toggle
+    let img = document.getElementById("image");
+    let large = false;
+    img.ondblclick = function() {
+        if (large) {
+            img.style.width = "150px";
+        } else {
+            img.style.width = "300px";
+        }
+        large =! large;
+    };
+
+    // Keyboard Press Event
+
+    // Dropdown Selection
+
+    // Real-time Character Count
+    let text = document.getElementById("textarea");
+    let charCount = document.getElementById("charCount");
+    text.oninput = function() {
+        charCount.innerText = "Characters: " + text.value.length;
+    };
+
+    </script>
+</body>
+</html>

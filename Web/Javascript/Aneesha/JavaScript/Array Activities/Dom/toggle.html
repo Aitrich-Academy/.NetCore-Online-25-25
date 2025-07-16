@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="image.png" width="50" id="show">
+    <button  onclick="showImage()">Show/Hide Image</button>
+    <button id="count">counter</button>
+    <p id="numb"></p>
+
+
+    <script>
+      
+        function showImage(){
+            let visibility = document.getElementById('show');
+
+            if(visibility.style.display === 'block'){
+               visibility .style.display = 'none';
+            } else {
+                visibility.style.display = 'block';
+            }
+           
+        }
+               let count=0;
+  
+            let  counterIncrease = document.getElementById('count');
+            let numberDisplay = document.getElementById('numb')
+
+             counterIncrease.addEventListener('click',function(){
+               
+                count++;
+                 numberDisplay.innerText = count;
+
+
+             })
+        
+            
+
+    
+        
+
+    </script>
+</body>
+</html>

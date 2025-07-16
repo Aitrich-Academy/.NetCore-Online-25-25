@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+      <!-- <button onclick="toggleImage()">Show/Hide Image</button><br> -->
+      <img id="slide"><br>
+      <button onclick="previous()">previous</button>
+      <button onclick="next()">next</button>
+    <script>
+
+    // Toggle Image 
+    // function toggleImage() {
+    //   const img = document.getElementById("myImage");
+    //   if (img.style.display === "none") {
+    //     img.style.display = "block"; 
+    //   } else {
+    //     img.style.display = "none";
+    //   }
+    // }
+
+    // image slide
+    const image=["Screenshot 2025-05-27 134513.png","cells.jpeg","thanks.jpg"]
+    let index=0;
+    const picture=document.getElementById("slide");
+     function slide(id){
+        if(id==="previous"){
+            index--
+            if(index== -1){
+                index=image.length -1;
+            }
+        }else{
+            index++
+            if (index==image.length){
+                index=0;
+            }
+             }
+             picture.src=image[index];
+    }
+    
+
+
+
+     
+
+    </script>
+</body>
+</html>  

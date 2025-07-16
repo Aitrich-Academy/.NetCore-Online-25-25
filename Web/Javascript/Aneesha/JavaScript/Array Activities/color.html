@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+
+
+    <script>
+       let a = ["blue" , "green", "red"]
+       console.log(a)
+       console.log(a[1])
+
+
+    //    2.Grocery List
+    let groceryList = ["milk","bread", "egg" , ]
+    groceryList[3] = "butter";    // add one item to the array
+    console.log(groceryList)
+   let elements = groceryList.shift();      //remove first item from the array
+   console.log(elements)
+
+
+ let fruits =["apple","orange","grapes","banana","mango"];
+ console.log("Number of fruits:",fruits.length);
+
+ //print each fruit using a loop
+ for(let i =0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+ }
+  
+
+ //Daily Tempratures
+ let tempratures = [70,68,75,73,69,72,74];
+    // avg =sum/length;
+    //   find sum
+//     for (i = 0; i < myArray.length; i++) {
+//   sum += myArray[i];
+// }
+
+
+    let sum = 0;
+  
+    for (let i =0; i < tempratures.length;i++) {
+        sum += tempratures[i];
+
+    }
+
+ console.log("length of array",tempratures.length)
+  let average = sum/tempratures.length;
+  console.log("Average Temprature:", average);
+
+
+
+
+//find the highest temprature
+let highest = tempratures[0];
+for (let i =1 ; i < tempratures.length; i++){
+    if (tempratures[i] > highest) {
+        highest = tempratures[i];
+    }
+}
+//print highest temprtaure
+console.log("Higheat Temprature:", highest)
+
+
+//Reversing a List
+
+    let numbers = [1,2,3,4,5];
+    numbers.reverse();
+    console.log("Reversed Array:" , numbers);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

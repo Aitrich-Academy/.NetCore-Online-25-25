@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // shopping cart
+        let cart = [
+  {name: "apple",price: 200,quantity:1},
+  {name: "orange",price: 150,quantity:2},
+  {name: "mango",price: 100,quantity: 3}];
+  console.log(cart)
+  let totalCost = 0;
+  for (let i = 0; i < cart.length; i++) {
+  totalCost += cart[i].price * cart[i].quantity;}
+  console.log("totalCost= "+totalCost)
+
+        // library books
+        var library=[
+            {title:"alchemist",auther:"paulo",isAvailable:true},
+            {title:"sdffgh",auther:"asdfd",isAvailable:false},
+            {title:"sdsffdfgb",auther:"hjfhgf",isAvailable:true},
+            {title:"hgdgf",auther:"pnb",isAvailable:false},
+            {title:"alch",auther:"pakjgu",isAvailable:true}
+        ];
+        console.log(library)
+
+
+        // classroom students
+        var student=[
+            {name:"alisha",grade:"A",isPresent:true},
+             {name:"anessha",grade:"B",isPresent:false},
+              {name:"jyothi",grade:"A",isPresent:true},
+        ];
+        console.log(student)
+        
+
+        // weekly expenses track
+        var week=[
+            {day:"sunday",spentAmount:"5000"},
+             {day:"monday",spentAmount:"1000"},
+             {day:"tuesday",spentAmount:"2000"},
+              {day:"wednesday",spentAmount:"1500"},
+               {day:"thursday",spentAmount:"2500"},
+                {day:"friday",spentAmount:"1200"},
+                 {day:"saturday",spentAmount:"3000"}
+        ]
+        console.log(week)
+
+        // city information
+        var city=
+            {name:"thrissur",population:"10000",landmark:[{name:"thrissur temple",yearBuilt:"1900"},{name:"bus stand",yearBuilt:"1910"}]}
+            console.log(city)
+            console.log(city.landmark[0].name)
+        // 
+    </script>
+</body>
+</html>
