@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/svg-with-js.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+        integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Job Providers Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    #sidebar {
+      background-color: #003366;
+      color: white;
+      min-height: 100vh;
+    }
+    #sidebar .nav-item {
+      width: 100%;
+      padding: 12px 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #sidebar .nav-item:hover {
+      background-color: #F2F2F2;
+      color: black;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+    }
+    .label {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .label {
+        display: inline;
+        margin-left: 10px;
+      }
+    }
+    .search-bar {
+      border-radius: 50px;
+      padding: 10px 20px;
+    }
+    .card {
+      min-height: 350px;
+    }
+    .delete-icon {
+      cursor: pointer;
+      color: red;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-2 col-md-3 col-xl-2 px-0" id="sidebar">
+      <div class="d-flex flex-column align-items-center align-items-md-start p-3">
+        <img src="images/Group 8.png" class="img-fluid mb-2" alt="Logo">
+        <img src="images/Jobie.png" class="img-fluid mb-4" alt="Jobie">
+        <ul class="nav nav-pills flex-column w-100">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-house-fill fs-5"></i>
+              <span class="label">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-people-fill fs-5"></i>
+              <span class="label">Job Providers</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-search fs-5"></i>
+              <span class="label">Job Seekers</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-grid-fill fs-5"></i>
+              <span class="label">Jobs</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-person-fill fs-5"></i>
+              <span class="label">My Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-envelope-fill fs-5"></i>
+              <span class="label">Messages</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-gear-fill fs-5"></i>
+              <span class="label">Skills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center">
+              <i class="bi bi-box-arrow-right fs-5"></i>
+              <span class="label">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col" style="background-color: #f4f4f4;">
+      <div class="container">
+        <h4 class="fw-bold">Job Providers</h4>
+        <div class="my-3">
+          <input type="text" class="form-control" placeholder="Search by Title, Company or any job keyword">
+        </div>
+        <h6>Showing 65 Companies</h6>
+        <h6 class="text-muted">Based on your preferences</h6>
+        <div class="row g-3 mt-2">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card p-3">
+              <p><strong>Legal Name:</strong> nmfhjkm</p>
+              <p><strong>Summary:</strong> ghjkm</p>
+              <p><strong>Industry:</strong> </p>
+              <p><strong>Email:</strong> fgvbh@gmail.com</p>
+              <p><strong>Phone:</strong> 1234567890</p>
+              <p><strong>Address:</strong> wdfg</p>
+              <p><strong>Website:</strong> dfgbn</p>
+              <p><strong>Location:</strong> 654e6e46-3f71-4ff8-b812-bed66fbec06a</p>
+              <i class="bi bi-trash delete-icon"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card p-3">
+              <p><strong>Legal Name:</strong> TCS</p>
+              <p><strong>Summary:</strong> tcs is</p>
+              <p><strong>Industry:</strong> </p>
+              <p><strong>Email:</strong> tcs@mail.com</p>
+              <p><strong>Phone:</strong> 7025906287</p>
+              <p><strong>Address:</strong> tcs india</p>
+              <p><strong>Website:</strong> www.tcs.com</p>
+              <p><strong>Location:</strong> 654e6e46-3f71-4ff8-b812-bed66fbec06a</p>
+              <i class="bi bi-trash delete-icon"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card p-3 shadow-sm">
+              <p><strong>Legal Name:</strong> Datamate</p>
+              <p><strong>Summary:</strong> famous</p>
+              <p><strong>Industry:</strong> </p>
+              <p><strong>Email:</strong> datamate@gmail.com</p>
+              <p><strong>Phone:</strong> 9188093460</p>
+              <p><strong>Address:</strong> datamate, india</p>
+              <p><strong>Website:</strong> www.datamate.com</p>
+              <p><strong>Location:</strong> be382247-3888-4cf8-babb-cc6c304247be</p>
+              <i class="bi bi-trash delete-icon"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card p-3 shadow-sm">
+              <p><strong>Legal Name:</strong> Accenture</p>
+              <p><strong>Summary:</strong> Accenture is an IT company</p>
+              <p><strong>Industry:</strong> </p>
+              <p><strong>Email:</strong> accenture@gmail.com</p>
+              <p><strong>Phone:</strong> 9847229367</p>
+              <p><strong>Address:</strong> Accenture, Ernakulam</p>
+              <p><strong>Website:</strong> www.accenture.com</p>
+              <p><strong>Location:</strong> be382247-3888-4cf8-babb-cc6c304247be</p>
+              <i class="bi bi-trash delete-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>        
+</body>
+</html>
