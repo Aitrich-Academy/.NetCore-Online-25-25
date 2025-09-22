@@ -2,6 +2,7 @@
 
 using JobProvider.Enums;
 
+
 namespace JobProvider.Models
 {
     public class User

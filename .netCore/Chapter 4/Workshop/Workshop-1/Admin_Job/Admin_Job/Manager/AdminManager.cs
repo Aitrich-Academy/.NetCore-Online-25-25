@@ -1,5 +1,7 @@
 ﻿
+using Admin_Job;
 using Admin_Job.Interface;
+using Admin_Job.Manager;
 using Admin_Job.Models;
 using Admin_Job.Repository;
 using System;
@@ -9,11 +11,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Admin_Job.Manager
+namespace AdminJob_workshop1.Manager
 {
-    public class AdminManager:IMenu
+    public class AdminManager :IMenu
     {
-        IJobProvider Jobs =new JobManager();
+        IJobProvider Jobs = new JobManager();
         private User loggedUser;
         private UserRepository Admins = new UserRepository();
         private Lists display = new Lists();
@@ -24,7 +26,7 @@ namespace Admin_Job.Manager
 
         public void DisplayMenu()
         {
-            ShowAdminMenu();
+          ShowAdminMenu();
         }
 
         public void ShowAdminMenu()
