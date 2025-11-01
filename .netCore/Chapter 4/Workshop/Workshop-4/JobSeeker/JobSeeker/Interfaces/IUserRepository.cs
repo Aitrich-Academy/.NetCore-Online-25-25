@@ -1,16 +1,27 @@
-﻿using JobSeeker.Model;
+﻿using workshop_chap4.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace JobSeeker.Interfaces
+namespace workshop_chap4.Repository
 {
-    public interface IUserRepository 
+    public class UserRepository
     {
-        List<User> getAll();
-        bool register(User user);
+        private readonly List<User> _users = new List<User>();
 
+        public List<User> GetAll() => _users;
+
+        public bool Register(User user)
+        {
+            if (_users.Exists(u => u.Email == user.Email))
+                throw new Exception("User already exists!");
+
+            _users.Add(user);
+            return true;
+        }
+
+        public User? Login(string email, string password)
+        {
+            return _users.Find(u => u.Email == email && u.Password == password);
+        }
     }
 }
