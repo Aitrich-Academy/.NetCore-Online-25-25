@@ -1,37 +1,36 @@
-﻿
-
-using Admin_Job.Enums;
-using JobSeeker.Exceptions;
-using JobSeeker.Interfaces;
-using JobSeeker.Model;
-using JobSeeker.Repository;
+﻿using System;
 using System.Text.RegularExpressions;
+using Admin_Job.Enums;
+using workshop_chap4.Interfaces;
+using workshop_chap4.Model;
+using workshop_chap4.Repository;
+using workshop_chap4.Exceptions;
+using JobSeeker.Manager;
 
-namespace JobSeeker.Manager
+namespace workshop_chap4.Manager
 {
     public class PublicManager : IMenu
     {
-  UserRepository userRepository = new UserRepository();
+        private readonly UserRepository _userRepository = new UserRepository();
         public User LoggedUser = new User();
-        bool _isLogged = false;
-        IMenu menu;
+        private IMenu? menu;
+
         public void DisplayMenu()
         {
-            showUserMenu();
+            ShowUserMenu();
         }
-        private void showUserMenu()
+
+        private void ShowUserMenu()
         {
             bool exitProgram = false;
-
-
             while (!exitProgram)
             {
-                Console.WriteLine("Choose an option:");
+                Console.WriteLine("\nChoose an option:");
                 Console.WriteLine("1. Register");
                 Console.WriteLine("2. Login");
                 Console.WriteLine("3. Exit");
 
-                string option1 = Console.ReadLine();
+                string? option1 = Console.ReadLine();
                 switch (option1)
                 {
                     case "1":
@@ -39,125 +38,89 @@ namespace JobSeeker.Manager
                         break;
                     case "2":
                         LoginJobSeeker();
-                        if (_isLogged)
-                            menu.DisplayMenu();
                         break;
-                       
                     case "3":
                         exitProgram = true;
                         break;
                     default:
-                        Console.WriteLine("invalid option ");
+                        Console.WriteLine("Invalid option. Try again.");
                         break;
                 }
             }
-
         }
-        void LoginJobSeeker()
+
+        private void LoginJobSeeker()
         {
+            string email = GetEmail();
+            Console.WriteLine("Please enter your password:");
+            string password = Console.ReadLine() ?? string.Empty;
+
+            User? user = _userRepository.Login(email, password);
+            if (user != null)
+            {
+                LoggedUser = user;
+                Console.WriteLine($"Login successful! Welcome {LoggedUser.FirstName}");
+                if (LoggedUser.Role == Roles.JobSeeker)
+                {
+                    menu = new UserManager(LoggedUser);
+                    menu.DisplayMenu();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Login failed. Try again.");
+            }
+        }
+
+        private void RegisterJobSeeker()
+        {
+            User newUser = new User();
+            Console.WriteLine("First name:");
+            newUser.FirstName = Console.ReadLine();
+
+            Console.WriteLine("Last name:");
+            newUser.LastName = Console.ReadLine();
+
+            newUser.Email = GetEmail();
+            newUser.Phone = GetPhoneNumber();
+
+            Console.WriteLine("Password:");
+            newUser.Password = Console.ReadLine() ?? string.Empty;
+
             try
             {
-                //Console.WriteLine("Please enter your email:");
-                string email = GetEmail();
-
-                Console.WriteLine("Please enter your password:");
-                string password = Console.ReadLine();
-                LoggedUser = userRepository.login(email, password);
-                if (LoggedUser != null)
-                {
-                    Console.WriteLine("Login successful!");
-                    _isLogged = true;
-                    Console.WriteLine("------------------------JobSeeker--------------------------");
-                    Console.WriteLine("Welcome " + LoggedUser.FirstName);
-                    if (LoggedUser.Role == Roles.JobSeeker)
-                    {
-                        menu = new UserManager(LoggedUser);
-                    }                
-                }
-                else
-                {
-                    Console.WriteLine("Login failed. Please try again.");
-                }
+                _userRepository.Register(newUser);
+                Console.WriteLine("Registration successful!");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-
-
-        void RegisterJobSeeker()
-        {
-            try
-            {
-                User newJobSeeker = new User();
-
-                Console.WriteLine("Please enter your first name:");
-                newJobSeeker.FirstName = Console.ReadLine();
-
-                Console.WriteLine("Please enter your last name:");
-                newJobSeeker.LastName = Console.ReadLine();
-
-                //  Console.WriteLine("Please enter your email address:");
-                newJobSeeker.Email = GetEmail();
-
-                newJobSeeker.Phone = GetPhoneNumber();
-
-
-                Console.WriteLine("Please enter a password:");
-                newJobSeeker.Password = Console.ReadLine();
-                userRepository.register(newJobSeeker);
-                // Register(newJobSeeker);
-
-                Console.WriteLine("Registration successful");
-            }
-            catch (UserAlreadyExistException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message + "\n"); }
-        }
-
 
         private string GetEmail()
         {
-            try
+            while (true)
             {
-                Console.WriteLine("Please enter your email address:");
-                string email = Console.ReadLine();
-                Regex regex = new Regex("^\\S+@\\S+\\.\\S+$");
+                Console.WriteLine("Email:");
+                string? email = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(email) && Regex.IsMatch(email, @"^\S+@\S+\.\S+$"))
+                    return email;
 
-                if (!regex.IsMatch(email))
-                    throw new InvalidFormatException("email was not in correct format :" + email);
-                return email;
-            }
-            catch (InvalidFormatException ex)
-            {
-                Console.WriteLine(ex.Message + "\n");
-                Console.WriteLine("try again...");
-                return GetEmail();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message + "\n");
-                return GetEmail();
+                Console.WriteLine("Invalid email, try again...");
             }
         }
 
         private long GetPhoneNumber()
         {
-            try
+            while (true)
             {
-                Console.WriteLine("Please enter your phone number:");
-                long Phone = long.Parse(Console.ReadLine());
-                return Phone;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Enter valid phone number");
-                return GetPhoneNumber();
+                Console.WriteLine("Phone number:");
+                if (long.TryParse(Console.ReadLine(), out long phone))
+                    return phone;
+
+                Console.WriteLine("Invalid number, try again...");
             }
         }
-
     }
 }
