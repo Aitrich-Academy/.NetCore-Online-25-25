@@ -1,0 +1,221 @@
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Age INT,
+    DepartmentID INT
+);
+
+INSERT INTO Students(StudentID,Name,Age,DepartmentID)
+VALUES (1,'Aneesha', 20, 3);
+select * from Students
+CREATE TABLE Employeez(
+EmpID INT PRIMARY KEY,
+    FirstName NVARCHAR(50),
+    LastName NVARCHAR(50),
+    DepartmentID INT
+)
+INSERT INTO Employeez (EmpID, FirstName, LastName, DepartmentID)
+VALUES
+(101, 'John', 'Doe', 1),
+(102, 'Mary', 'Thomas', 2),
+(103, 'Ravi', 'Kumar', 1);
+
+select * from Employeez
+
+TRUNCATE table employeez;
+
+CREATE TABLE OldStudents (
+    StudentID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Age INT,
+    DepartmentID INT
+);
+select *from OldStudents
+
+SELECT *
+FROM Employeez;
+
+SELECT FirstName, LastName, Salary
+FROM Employees;
+
+
+
+INSERT INTO OldStudents (StudentID, Name, Age, DepartmentID)
+VALUES 
+(1, 'Aneesha', 20, 3),
+(2, 'Ravi', 21, 2);
+
+CREATE TABLE NewStudents (
+    StudentID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Age INT,
+    DepartmentID INT
+);
+
+select *from NewStudents
+INSERT INTO NewStudents (StudentID, Name, Age, DepartmentID)
+SELECT StudentID, Name, Age, DepartmentID
+FROM OldStudents;
+
+CREATE TABLE Products2 (
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductName NVARCHAR(100),
+    Price DECIMAL(10,2),
+    Quantity INT
+);
+select *from Products2
+
+INSERT INTO Products2 (ProductName, Price, Quantity)
+VALUES ('Laptop', 75000, 10);
+
+ALTER TABLE Employeez
+ADD Salary DECIMAL(10, 2);
+SELECT * from employeez
+
+
+UPDATE Employeez
+SET Salary = 90000
+where EmpID =102;
+
+UPDATE Products2
+SET Price = Price * 1.10;
+
+ALTER TABLE Employeez
+ADD Department NVARCHAR(50);
+
+Update employeez
+Set Department = 'HR'
+Where DepartmentID =103;
+
+
+UPDATE Employeez
+SET Department = 'Human Resources'
+WHERE Department = 'HR';
+
+
+UPDATE Students
+SET PhoneNumber = '9876543210',
+    Email = 'student@example.com'
+WHERE StudentID = 10;
+
+
+
+
+
+
+
+UPDATE employeez
+SET Department = 'HR'
+WHERE EmpID = 103;
+
+
+
+
+
+UPDATE employeez
+SET Department = 'Sales'
+WHERE DepartmentID = 2;
+
+UPDATE Employeez
+SET Department = 'Human Resources'
+WHERE Department = 'HR';
+
+
+
+
+
+
+
+UPDATE employeez
+set Department = 'Human Resources'
+Where Department = 'HR';
+
+ALTER TABLE Employeez
+ADD Stock INT;
+
+select * from Employeez
+
+UPDATE Employeez
+SET Stock = 10
+WHERE EmpID = 101;
+
+UPDATE Employeez
+SET Stock = 0
+WHERE EmpID = 102;
+
+update employeez
+set stock = 25
+where empid =103;
+
+delete  from employeez
+where stock =0;
+
+
+ALTER TABLE Students
+ADD PhoneNumber NVARCHAR(15);
+
+Alter Table students
+Add Email NVARCHAR(100);
+
+select * from students
+select * from employeez
+
+delete from employeez;
+
+Update Students
+set phonenumber = '7902351636'
+where studentid = 1;
+
+
+INSERT INTO Students (StudentID, Name, Age, DepartmentID, PhoneNumber, Email)
+VALUES
+(19, 'Alice', 18, 101, '9876543210', 'alice@example.com'),
+(16, 'Bob', 19, 102, '9876543211', 'bob@example.com'),
+(17, 'Charlie', 18, 101, '9876543212', 'charlie@example.com'),
+(18, 'Diana', 20, 103, '9876543213', 'diana@example.com');
+
+UPDATE Students
+SET PhoneNumber = '7902351636',
+    Email = 'aneesha.t.a@gmail.com'
+WHERE StudentID = 1;
+
+Delete from students
+Where studentID = 15
+
+ALTER TABLE students
+ADD Salary DECIMAL(10, 2);
+
+
+select * from students
+
+UPDATE students
+set salary = 5000
+where DepartmentID = 103;
+
+DELETE from students
+where salary < 20000;
+
+
+delete from employeez;
+select *from employeez
+
+CREATE products
+
+
+INSERT INTO Products (ProductID, ProductName, Price )
+VALUES
+(101, 'Pen', 10, 50),
+(102, 'Pencil', 5, 100),
+(103, 'Notebook', 50, 30),
+(104, 'Eraser', 3, 75),
+(105, 'Marker', 20, 40);
+
+UPDATE Products
+SET Price = Price * 1.10
+WHERE ProductID IN (101, 102, 103, 104, 105);
+
+
+DELETE FROM Products
+WHERE ProductID = 104;  
+
+select from  *products

@@ -1,0 +1,23 @@
+CREATE  PROCEDURE GetALLOldStudents
+AS
+BEGIN
+    SELECT *  FROM OldStudents;
+END;
+
+EXEC GetALLOldStudents;
+
+SELECT * from Products
+
+CREATE PROCEDURE AddProduct
+    @ProductName NVARCHAR(100),
+    @Price DECIMAL(10,2),
+    @Quantity INT
+AS
+BEGIN
+    INSERT INTO Products (ProductName, Price, Quantity)
+    VALUES (@ProductName, @Price, @Quantity);
+END;
+
+EXEC AddProduct 'Laptop', 55000, 10;
+
+EXEC AddProduct 'SmartTV',40000, 3;

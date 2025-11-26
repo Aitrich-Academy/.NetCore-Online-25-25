@@ -1,0 +1,83 @@
+CREATE TABLE Customers(
+    CustomerID INT PRIMARY KEY,
+    NAME VARCHAR(100),
+    City VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+INSERT into Customers (CustomerID,NAME,City,Email) VALUES
+(1,'Anu','Kochi', 'anu@gmail.com'),
+(2,'Rahul','Chennai','rahul@yahoo.com'),
+(3,'Meera','Banglore','meera@gmail.com'),
+(4,'Aysha','Delhi','aysha@yahoo.com');
+
+select * from Customers
+
+
+CREATE TABLE Orders(
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    orderDate Date,
+    TotalAmount DECIMAL(10,2),
+    FOREIGN KEY (CustomerID) REFERENCES customers(CustomerID)
+    
+);
+
+INSERT INTO Orders(OrderID,CustomerID,orderDate,TotalAmount) VALUES
+(101,1,'2025-10-01',2500.00),
+(102,2,'2025-10-04',1700),
+(103,3,'2025-10-05',3000),
+(104,4,'2025-10-07',4500);
+
+TRUNCATE TABLE orders
+
+select * from Orders
+
+SELECT
+    Customers.NAME,
+    Orders.orderDate,
+    Orders.TotalAmount
+FROM Customers
+INNER JOIN Orders
+    ON Customers.CustomerID = Orders.CustomerID;
+
+
+
+
+Declare @TotalAmount DECIMAL;
+SELECT @TotalAmount = TotalAmount FROM Orders
+WHERE CustomerID =3;
+IF @TotalAmount > 10000
+PRINT 'Qualified';
+ELSE
+Print 'Unqualified';
+
+    
+DECLARE @count INT =1;
+WHILE @count <=5
+    BEGIN
+        PRINT 'Number:' + CAST(@count As NVARCHAR(10));
+        SET @count = @count+1;
+    END
+
+
+DECLARE @i INT =1;
+
+WHILE @i <= 10
+BEGIN 
+    IF @i = 6
+       BREAK;  -- exit when @i =6
+
+        
+        PRINT 'value:' +Cast(@i As NVARCHAR(10));
+        SET @i = @i + 1;
+     END
+
+
+        
+
+
+
+
+
+

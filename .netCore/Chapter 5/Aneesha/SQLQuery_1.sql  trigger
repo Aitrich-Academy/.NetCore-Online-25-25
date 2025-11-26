@@ -1,0 +1,99 @@
+
+SELECT * from products
+
+INSERT INTO Orders6 (OrderID, CustomerID, ProductID, OrderDate, Salary) VALUES
+(4, 3, 103, '2025-10-14', 5000.00);  
+
+
+
+
+
+
+CREATE TABLE OrderAudit (
+    AuditID INT PRIMARY KEY IDENTITY,
+    OrderID INT,
+    Action VARCHAR(50),
+    Timestamp DATETIME
+);
+
+--Trigger to log new orders
+CREATE TRIGGER LogNewOrder
+ON Orders
+After INSERT
+AS
+BEGIN
+    DECLARE @OrderID INT;
+
+    --get the orderID of the newly inserted record
+    SELECT  @OrderID of the newly inserted record
+    
+
+    -- Insert a record into the OrderAudit table
+
+INSERT INTO OrderAudit (OrderID, Action, Timestamp)
+VALUES (@OrderID, 'INSERT', GETDATE());
+END;
+
+
+
+
+CREATE TRIGGER PreventPriceDrop
+ ON Products
+ FOR UPDATE
+ AS
+ BEGIN
+ DECLARE @OldPrice DECIMAL(10, 2), @NewPrice DECIMAL(10, 2);
+ 
+-- Get old and new prices
+SELECT @OldPrice = Price FROM DELETED;
+ SELECT @NewPrice = Price FROM INSERTED;
+
+
+
+-- Check if the price has decreased by more than 20%
+IF @NewPrice < @OldPrice * 0.80
+BEGIN
+    RAISERROR('Price cannot be reduced by more than 20%%.',16,1);
+
+    ROLLBACK TRANSACTION;
+    END
+END;
+
+
+UPDATE Products set Price =400.00 where ProductID =11
+
+SELECT * from Customers6
+
+CREATE TABLE CustomerDeletionAudit (
+    AuditID INT PRIMARY KEY IDENTITY,
+    CustomerID INT,
+    CustomerName VARCHAR(100),
+    Action VARCHAR(50),
+    Timestamp DATETIME
+);
+
+SELECT * from CustomerDeletionAudit
+
+CREATE TRIGGER LogCustomerDeletion
+ON Customers6
+After DELETE
+As
+BEGIN
+    DECLARE @CustomerID INT, @CustomerName VARCHAR(100);
+
+    -- Get the details of the deleted customer
+    SELECT @CustomerID = CustomerID, @CustomerName = CustomerName FROM DELETED;
+
+    -- Insert a record into the CustomerDeletionAudit table
+    INSERT INTO CustomerDeletionAudit (CustomerID, CustomerName, Action, Timestamp)
+    VALUES (@CustomerID, @CustomerName, 'DELETE', GETDATE());
+END;
+
+DELETE FROM Customers6 WHERE CustomerID = 3
+
+
+
+
+
+
+
