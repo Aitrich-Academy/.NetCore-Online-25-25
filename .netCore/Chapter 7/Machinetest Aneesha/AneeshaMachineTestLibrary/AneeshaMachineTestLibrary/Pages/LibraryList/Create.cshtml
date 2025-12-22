@@ -1,0 +1,32 @@
+@page
+@model AneeshaMachineTestLibrary.Pages.LibararyList.Create
+
+<h2>Create Book</h2>
+
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="Library.Title" class="control-label"></label>
+        <input asp-for="Library.Username" class="form-control" />
+        <span asp-validation-for="Library.Username" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Library.Author" class="control-label"></label>
+        <input asp-for="Library.FullName" class="form-control" />
+        <span asp-validation-for="Library.FullName" class="text-danger"></span>
+    </div>
+
+  
+    <div class="form-group">
+        <label asp-for="Library.Quantity" class="control-label"></label>
+        <input asp-for="Library.Quantity" class="form-control" />
+        <span asp-validation-for="Quantity.Password" class="text-danger"></span>
+    </div>
+
+    
+
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+    <a asp-page="IndexList" class="btn btn-secondary mt-3">Cancel</a>
+</form>
