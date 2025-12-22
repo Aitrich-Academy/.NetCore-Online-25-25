@@ -1,0 +1,114 @@
+CREATE TABLE Products5 (
+    ProductID INT PRIMARY KEY,
+    ProductName NVARCHAR(100),
+    CategoryID INT,
+    UnitPrice DECIMAL(10,2)
+);
+TRUNCATE Table Products5
+SELECT *from Products5
+
+
+INSERT INTO Products5 (ProductID, ProductName, CategoryID, UnitPrice)
+VALUES
+(1, 'Laptop', 1, 55000.00),
+(2, 'Mouse', 1, 500.00),
+(3, 'Chair', 2, 3000.00);
+
+
+CREATE TABLE Categories (
+    CategoryID INT PRIMARY KEY,
+    CategoryName NVARCHAR(100)
+);
+SELECT *from Categories
+
+INSERT into Categories (CategoryID , CategoryName) VALUES
+(1,'Electronics'),
+(2,'Clothing'),
+(3,'Books');
+
+
+
+SELECT p.ProductName, c.CategoryName
+FROM Products P
+INNER JOIN Categories c
+     ON p.CategoryID = c.CategoryID;
+
+     SELECT c.CategoryID, c.CategoryName
+FROM Categories c
+LEFT JOIN Products p
+    ON c.CategoryID = p.CategoryID
+WHERE p.ProductID IS NULL;
+
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName NVARCHAR(100)
+);
+
+INSERT INTO Departments (DepartmentID, DepartmentName)
+VALUES
+(1, 'IT'),
+(2, 'HR'),
+(3, 'Finance');
+
+select * from Departments
+
+
+CREATE TABLE Employee (
+    EmpId INT PRIMARY KEY,
+    EmpName NVARCHAR(100),
+    DepartmentID INT  -- Foreign key to Departments
+);
+
+INSERT INTO Employee (EmpID, EmpName, DepartmentID)
+VALUES
+(1, 'Arjun', 1),
+(2, 'Priya', 2),
+(3, 'Rahul', 1),
+(4, 'Sneha', NULL),  -- Not assigned to any department
+(5, 'Kiran', 3);
+
+SELECT * from Employee
+
+select e.EmpName , d.DepartmentName
+ from employee e
+Left JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+
+
+
+CREATE TABLE Customers44(
+    CustomerID INT PRIMARY KEY,
+    NAME VARCHAR(100),
+    City VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+INSERT into Customers44 (CustomerID,NAME,City,Email) VALUES
+(1,'Anu','Kochi', 'anu@gmail.com'),
+(2,'Rahul','Chennai','rahul@yahoo.com'),
+(3,'Meera','Banglore','meera@gmail.com'),
+(4,'Aysha','Delhi','aysha@yahoo.com');
+
+SELECT c.CustomerName, SUM(o.TotalAmount) AS TotalSpent
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerName;
+
+
+select * from  Employee
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+

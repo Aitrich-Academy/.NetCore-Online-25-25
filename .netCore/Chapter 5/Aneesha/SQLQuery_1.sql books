@@ -1,0 +1,2 @@
+select * from Books
+revoke select on Books to user1

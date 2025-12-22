@@ -1,0 +1,34 @@
+@page
+@model AneeshaMachineTestLibrary.Pages.LibararyList.Librarylist
+
+<h2>Library List</h2>
+<a asp-page="Create" class="btn btn-primary mb-3">Add New Book</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table table-bordered table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var library  in Model.Library)
+    {
+        <tr>
+          
+            <td>@library.Id</td>
+            <td>@library.Title</td>
+            <td>@library.Author</td>
+            <th>Quantity</th>
+          
+            <td>
+                <a asp-page="/LibraryList/Edit" asp-route-CompanyMemberId="@library.Id" class="btn-warning btn-sm">Edit</a>
+                <a asp-page="Details" asp-route-CompanyMemberId="@library.Id" class="btn btn-info btn-sm">View</a>
+                <a asp-page="/LibraryList/Delete" asp-route-CompanyMemberId="@library.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

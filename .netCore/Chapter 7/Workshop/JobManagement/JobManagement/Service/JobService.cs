@@ -35,7 +35,7 @@ namespace JobManagement.Service
         {
             await jobRepository.UpdateJobAsync(id, jobDto);
         }
-
+        
         public async Task DeleteJobAsync(int id)
         {
             await jobRepository.DeleteJobAsync(id);

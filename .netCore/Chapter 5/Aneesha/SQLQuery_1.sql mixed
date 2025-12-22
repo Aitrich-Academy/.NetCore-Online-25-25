@@ -1,0 +1,70 @@
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY IDENTITY(1,1),
+    ProductName NVARCHAR(50),
+    Price DECIMAL(10,2)
+);
+
+INSERT into  Products(ProductName,Price) VALUES
+('Laptop',80000),
+('Smartphone',50000),
+('Tablet',30000),
+('Smartwatch',15000);
+
+UPDATE Products
+set Price = Price * 1.10;
+
+select *from Products
+
+Delete from Products
+where ProductName = 'smartwatch';
+
+create Table students2(
+    studentID int Primary key IDENTITY(1,1),
+    name nvarchar(50),
+    age int,
+    department NVARCHAR(50)
+);
+select *from students2
+
+INSERT into students2(Name,age,department)
+values('Aneesha',30,'IT');
+
+update students2
+set Age = 33
+where Name = 'Aneesha';
+
+SELECT * FROM Students
+WHERE Name = 'Aneesha';
+
+CREATE TABLE Employees2 (
+    EmpID INT PRIMARY KEY,
+    EmpName NVARCHAR(50),
+    Department NVARCHAR(50),
+    Salary DECIMAL(10,2)
+);
+
+CREATE TABLE TemporaryEmployees (
+    EmpID INT,
+    EmpName NVARCHAR(50),
+    Department NVARCHAR(50),
+    Salary DECIMAL(10,2)
+);
+INSERT INTO TemporaryEmployees (EmpID, EmpName, Department, Salary)
+VALUES 
+(1, 'John Mathew', 'IT', 55000),
+(2, 'Aneesh Kumar', 'HR', 48000),
+(3, 'Tina Joseph', 'Finance', 60000),
+(4, 'Lisa Thomas', 'Marketing', 52000),
+(5, 'David Fernandez', 'IT', 58000);
+select *from TemporaryEmployees
+
+INSERT INTO Employees2 (EmpID, EmpName, Department, Salary)
+SELECT EmpID, EmpName, Department, Salary
+FROM TemporaryEmployees;
+
+DELETE FROM TemporaryEmployees;
+SELECT * FROM Employees2;          
+SELECT * FROM TemporaryEmployees; 
+
+
+

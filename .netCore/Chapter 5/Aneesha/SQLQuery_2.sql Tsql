@@ -1,0 +1,110 @@
+CREATE TABLE Employi (
+    EmpID INT PRIMARY KEY,         
+    Name VARCHAR(50),             
+    Department VARCHAR(50),        
+    Salary DECIMAL(10,2),          
+    Gender CHAR(1),              
+    City VARCHAR(50)               
+);
+
+SELECT * from Employi
+
+INSERT INTO Employi (EmpID, Name, Department, Salary, Gender, City) VALUES
+(1, 'Arjun', 'IT', 60000, 'M', 'Chennai'),
+(2, 'Priya', 'HR', 55000, 'F', 'Bangalore'),
+(3, 'Rahul', 'IT', 75000, 'M', 'Chennai'),
+(4, 'Sneha', 'Finance', 50000, 'F', 'Mumbai'),
+(5, 'Karan', 'IT', 80000, 'M', 'Pune'),
+(6, 'Nisha', 'HR', 62000, 'F', 'Bangalore'),
+(7, 'Rajesh', 'Finance', 70000, 'M', 'Delhi'),
+(8, 'Meena', 'IT', 58000, 'F', 'Chennai'),
+(9, 'Deepak', 'HR', 49000, 'M', 'Pune'),
+(10, 'Asha', 'IT', 72000, 'F', 'Delhi');
+
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY,       
+    EmpID INT,                    
+    Product VARCHAR(50),           
+    Quantity INT,                 
+    Amount DECIMAL(10,2),         
+    SaleDate DATE,               
+    FOREIGN KEY (EmpID) REFERENCES Employi(EmpID)
+);
+
+
+INSERT INTO Sales (SaleID, EmpID, Product, Quantity, Amount, SaleDate) VALUES
+(1, 1, 'Laptop', 2, 120000, '2024-01-10'),
+(2, 3, 'Laptop', 1, 60000, '2024-02-12'),
+(3, 2, 'Mouse', 10, 5000, '2024-03-15'),
+(4, 5, 'Monitor', 3, 45000, '2024-03-20'),
+(5, 7, 'Keyboard', 5, 15000, '2024-04-02'),
+(6, 1, 'Monitor', 1, 15000, '2024-05-10'),
+(7, 4, 'Laptop', 1, 65000, '2024-06-11'),
+(8, 6, 'Mouse', 15, 7500, '2024-06-20'),
+(9, 9, 'Monitor', 2, 30000, '2024-07-10'),
+(10, 10, 'Laptop', 3, 180000, '2024-08-02');
+
+select*
+from Employi
+where Department ='IT'
+AND Salary>60000;
+
+SELECT *
+FROM Employi
+WHERE (City = 'Chennai' OR Salary < 55000)
+AND Department <> 'HR';
+
+
+select Name,Salary
+From Employi
+order by salary Desc,Name Asc;
+
+
+SELECT Department, SUM(Salary) AS TotalSalary
+FROM Employi
+GROUP BY Department;
+
+SELECT Department, AVG(Salary) AS AvgSalary
+FROM Employi
+GROUP BY Department
+HAVING AVG(Salary) > 60000;
+
+select e.name,sum(s.amount) AS Totalsales
+from Employi e
+join sales s on e.EmpID = s.EmpID
+Group by e.Name
+Having sum(s.Amount) > 50000;
+
+SELECT City, COUNT(*) AS EmployeeCount
+FROM Employi
+GROUP BY City
+HAVING COUNT(*) > 2;
+
+SELECT *
+FROM Employi
+WHERE Salary BETWEEN 55000 AND 75000
+AND City IN ('Chennai','Bangalore')
+ORDER BY Department;
+
+
+select department,
+       max(salary) as HighestSalary,
+       min(salary) as LowestSalary,
+       Avg(salary) as AvgSalary
+from Employi
+GROUP by Department
+order by AvgSalary desc;
+
+
+
+SELECT
+  s.EmpID,Product,
+   SUM(s.Amount) As TotalLaptopSales
+
+   from Sales s where  Product in('Laptop','Monitor')
+   Group By EmpID,Product
+   Having Sum(s.amount)>100000
+
+
+
+
