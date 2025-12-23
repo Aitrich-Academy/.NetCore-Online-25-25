@@ -1,0 +1,22 @@
+﻿@page
+@model AlishaMachineTest.Pages.Index1Model
+@{
+}
+<h2>Book list</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Quantity</th>
+    </tr>
+    @foreach(var book in Model.Books)
+    {
+        <tr>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Quantity</td>
+        </tr>
+    }
+</table>
+
+<a asp-page="Create">Add Books</a>
