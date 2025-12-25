@@ -1,3 +1,4 @@
+using AneeshaMachineTestLibrary.Helper;
 using AneeshaMachineTestLibrary.Interface;
 using AneeshaMachineTestLibrary.Model;
 using AneeshaMachineTestLibrary.Repository;
@@ -18,7 +19,7 @@ public static class ApplicationServiceExtension
 
         services.AddScoped<IBookRepository, BookRepository>();
 
-        services.AddAutoMapper(typeof(AutoMapperProfile));
+        services.AddAutoMapper(typeof(Automapper));
         return services;
 
     }

@@ -21,7 +21,7 @@ public class BookRepository : IBookRepository
     
 
 
-    public async Task<Book?> GetBookIdAsync(int id)
+    public async Task<Book?> GetBookByIdAsync(int id)
     {
         return await _dbcontext.Books.FindAsync(id);
     }
