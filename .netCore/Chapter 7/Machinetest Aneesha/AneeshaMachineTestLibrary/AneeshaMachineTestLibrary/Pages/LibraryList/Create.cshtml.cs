@@ -1,16 +1,17 @@
 using AneeshaMachineTestLibrary.DTO;
 using AneeshaMachineTestLibrary.Interface;
+using AneeshaMachineTestLibrary.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace AneeshaMachineTestLibrary.Pages.LibararyList;
+namespace AneeshaMachineTestLibrary.Pages.LibraryList;
 
 public class Create : PageModel
 {
-    private readonly IBookService bookservice;
+    private readonly IBookService _bookService;
     [BindProperty]
-    public BookDto Book { get; set; }
+    public BookDto Library { get; set; }
 
     public Create(IBookService bookService)
     {
@@ -21,7 +22,7 @@ public class Create : PageModel
     {
         if (!ModelState.IsValid)
             return Page();
-        await _bookService.AddBookAsync(Book);
+        await _bookService.AddBookAsync(Library);
         return RedirectToPage("Librarylist");
     }
 

@@ -1,5 +1,5 @@
 @page
-@model AneeshaMachineTestLibrary.Pages.LibararyList.Librarylist
+@model AneeshaMachineTestLibrary.Pages.LibraryList.Librarylist;
 
 <h2>Library List</h2>
 <a asp-page="Create" class="btn btn-primary mb-3">Add New Book</a>
@@ -21,12 +21,12 @@
             <td>@library.Id</td>
             <td>@library.Title</td>
             <td>@library.Author</td>
-            <th>Quantity</th>
+            <td>@library.Quantity</td>
           
             <td>
-                <a asp-page="/LibraryList/Edit" asp-route-CompanyMemberId="@library.Id" class="btn-warning btn-sm">Edit</a>
-                <a asp-page="Details" asp-route-CompanyMemberId="@library.Id" class="btn btn-info btn-sm">View</a>
-                <a asp-page="/LibraryList/Delete" asp-route-CompanyMemberId="@library.Id" class="btn btn-danger btn-sm">Delete</a>
+                <a asp-page="/LibraryList/Edit" asp-route-Id="@library.Id" class="btn-warning btn-sm">Edit</a>
+                <a asp-page="Details" asp-route-Id="@library.Id" class="btn btn-info btn-sm">View</a>
+                <a asp-page="/LibraryList/Delete" asp-route-Id="@library.Id" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
     }

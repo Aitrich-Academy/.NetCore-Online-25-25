@@ -21,16 +21,20 @@ public class BookService : IBookService
         var books = await _bookRepository.GetAllBooksAsync();
         return _mapper.Map<List<BookDto>>(books);
     }
-
+  
     public async Task AddBookAsync(BookDto bookDto)
     {
         var book = _mapper.Map<Book>(bookDto);
         await _bookRepository.AddBookAsync(book);
     }
 
-    public async Task<BookDto?> GetBookIdAsync(int id)
+    public async Task<BookDto?> GetBookByIdAsync(int id)
     {
-        var book = await _bookRepository.GetBookIdAsync(id);
+        var book = await _bookRepository.GetBookByIdAsync(id);
+        
+        if (book == null)
+            return null;
+        
         return _mapper.Map<BookDto?>(book);
     }
 

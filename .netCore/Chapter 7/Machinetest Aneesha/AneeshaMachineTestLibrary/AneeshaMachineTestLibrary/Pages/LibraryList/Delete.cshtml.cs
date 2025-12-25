@@ -1,25 +1,25 @@
 using AneeshaMachineTestLibrary.DTO;
 using AneeshaMachineTestLibrary.Interface;
-using AneeshaMachineTestLibrary.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace AneeshaMachineTestLibrary.Pages;
+namespace AneeshaMachineTestLibrary.Pages.LibraryList;
 
 public class Delete : PageModel
 {
     private readonly IBookService _bookService;
     public Delete(IBookService bookService)
-        {
+    {
         _bookService = bookService;
-        }
+    }
     
     [BindProperty]
     
-    public BookDto Book { get; set; }
+    public BookDto Library { get; set; }
 
     public async Task<IActionResult> OnGetAsync(int? id)
     {
+        Library = await _bookService.GetBookByIdAsync(id.Value);
         if (Library == null)
         {
             return NotFound();
@@ -27,10 +27,10 @@ public class Delete : PageModel
         return Page();
     }
 
-    public async Task<IActionResult> OnPostAsync(int CompanyMemberId)
+    public async Task<IActionResult> OnPostAsync(int id)
     {
-        await _service.DeleteBookAsync(CompanyMemberId);
-        return RedirectToPage("Memberlist");
+        await _bookService.DeleteBookAsync(id);
+        return RedirectToPage("Librarylist");
     }
-    
+
 }
