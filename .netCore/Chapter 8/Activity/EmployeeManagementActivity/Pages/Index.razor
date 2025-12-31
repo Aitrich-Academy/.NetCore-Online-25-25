@@ -1,0 +1,75 @@
+﻿@page "/"
+@inject EmployeeServices EmployeeService
+@inject NavigationManager Navigation
+@using EmployeeManagementActivity.Model
+@using EmployeeManagementActivity.Services
+
+<PageTitle>Index</PageTitle>
+
+<h1>Welcome to Employment Management System!</h1>
+<button class="btn btn-primary" @onclick="()=>NavigateToCreate()">+Add Employee</button>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                </tr>    
+                <tbody>
+                    @if (Employees == null)
+                    {
+                        <div class="text-centre"> 
+                            <p>Loading Employees....</p>
+                        </div>
+                    }
+                    else if (Employees.Count == 0)
+                    {
+                        <div class="text-centre">
+                            <p>Not have the Employees List....</p>
+                        </div>
+                    }
+                    else
+                    {
+                        @foreach (EmployeeMgt employ in Employees)
+                        {
+                            <tr>
+                                <td>@employ.Name</td>
+                                <td>@employ.Position</td>
+                                <td>@employ.Age</td>
+                                <td>@employ.Salary</td>
+                                <td>
+                                    <button class="btn-danger" @onclick="() => NavigateToEdit(employ.Id)">Edit </button>
+                                    <button class="btn-danger" @onclick="() => NavigateToDelete(employ.Id)">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+             </table>
+        </div>
+    </div>
+</div>
+
+@code{
+    private IList<EmployeeMgt> Employees = new List<EmployeeMgt>();
+    protected override async Task OnInitializedAsync()
+    {
+        Employees =await EmployeeService.GetEmployeeAsync();
+    }
+    private void NavigateToCreate()
+    {
+        Navigation.NavigateTo("/Create");
+    }
+    private void NavigateToEdit(int id)
+    {
+        Navigation.NavigateTo($"/Edit/{id}");
+    }
+    private void NavigateToDelete(int id)
+    {
+        Navigation.NavigateTo($"/Delete/{id}");
+    }
+}

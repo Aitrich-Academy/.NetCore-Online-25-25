@@ -1,0 +1,44 @@
+﻿
+@page "/Delete/{id:int}"
+@using EmployeeManagementActivity.Model
+@using EmployeeManagementActivity.Services
+@inject EmployeeServices employeeServices
+@inject NavigationManager navigation
+<h3>Edit the employee details</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form >
+                @if (employee == null)
+                {
+                    <div class="d-inline-flex">
+                        <p>Employee details are not there.</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="d-inline-flex">
+                        <p>Employee details are there.Do you want to delete?</p>
+                        <button class="btn btn-primary" @onclick="()=>deleteEmployee(employee)">Delete</button>
+                    </div>
+                }
+                </form>
+                </div>
+      </div>
+</div>
+<h3>Delete Employee</h3>
+
+@code {
+    [Parameter] public int id { get; set; }
+    private EmployeeMgt employee = new EmployeeMgt();
+    protected override async Task OnInitializedAsync()
+    {
+        employee = await employeeServices.GetEmployeebyIdAsync(id);
+    }
+    private async Task deleteEmployee(EmployeeMgt employee)
+    {
+        await employeeServices.deleteEmployee(employee);
+
+        navigation.NavigateTo("/");
+    }
+}

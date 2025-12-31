@@ -1,0 +1,62 @@
+﻿@page "/Edit/{id:int}"
+@using EmployeeManagementActivity.Model
+@using EmployeeManagementActivity.Services
+@using Microsoft.AspNetCore.Components.Forms
+
+@inject EmployeeServices employeeServices
+@inject NavigationManager navigation
+<h3>Edit the employee details</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            
+                @if (employee == null)
+                {
+                    <div class="d-inline-flex">
+                        <p>Employee details are not there.</p>
+                    </div>
+                }
+                else
+                {
+                   
+                <EditForm OnValidSubmit="@UpdateDetails" Model="employee">
+
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <label>Name:</label>
+                    <InputText @bind-Value="@employee.Name" class="form-control" />
+        
+                <label>Age:</label>
+                    <InputNumber @bind-Value="@employee.Age" class="form-control" />
+        
+                <label>Position:</label>
+                    <InputText @bind-Value="@employee.Position" class="form-control" />
+        
+                <label>Salary:</label>
+                    <InputNumber @bind-Value="@employee.Salary" class="form-control" />
+        
+                <button class="btn btn-primary" type="submit">Update</button>
+                </EditForm>
+                }
+
+        </div>
+    </div>
+</div>
+@code {
+
+    [Parameter] public int id { get; set; }
+    private EmployeeMgt employee = new EmployeeMgt();
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("Entered");
+        employee=await employeeServices.GetEmployeebyIdAsync(id);
+        Console.WriteLine(employee);
+    }
+    private async Task UpdateDetails()
+    {
+        await employeeServices.UpdateEmployeeDetails(employee);
+        navigation.NavigateTo("/");
+    }
+
+}
