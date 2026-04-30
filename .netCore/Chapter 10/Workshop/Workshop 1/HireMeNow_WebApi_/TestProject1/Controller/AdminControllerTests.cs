@@ -23,26 +23,28 @@ namespace TestProject1.Controller
         public readonly Mock<ILoginRequestService> _loginRequestService;
         public readonly Mock<IJobServices> _jobService;
         private readonly AdminController _controller;
-       
-       
+
+
         public AdminControllerTests()
         {
-            var configurationProvider = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile<AutoMapperProfiles>();
-            });
-            
+            var configurationProvider = new MapperConfiguration(cfg => { cfg.AddProfile<AutoMapperProfiles>(); });
+
         }
+
         [Fact]
         public void GetCompanies()
         {
-            var companies=new JobProviderDto
+            var companies = new JobProviderDto
             {
 
-                i
-            } 
+
+
+
+
+
+            }
         }
-
-
     }
+
+
 }

@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailKit;
 
 namespace Domain.Service
 {
-    public class EmailService: IEmailService
+    public class EmailService:IEmailService
     {
         private readonly MailSettings _mailSettings;
         private readonly IConfiguration _config;

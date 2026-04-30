@@ -27,5 +27,7 @@ namespace Domain.Service.SignUp.Interfaces
         public Task<byte[]> getResumeFile(Guid resumeId);
 
         public Task DeleteResume(Guid resumeId);
+        
+        
     }
 }

@@ -1,6 +1,6 @@
 
 
-﻿using Domain.Helpers;
+using Domain.Helpers;
 using Domain.Models;
 using Domain.Service.Job.DTOs;
 using System;
